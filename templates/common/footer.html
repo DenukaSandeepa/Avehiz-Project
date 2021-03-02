@@ -1,0 +1,40 @@
+{% load static %}
+
+<footer class="minimal-footer-1">
+   <div class="container">
+      <div class="row">
+         <div class="col-sm-4">
+            <aside class="widget">
+               <h3 class="widget-title">About Us</h3>
+               <p>You bet your life Speed Racer he will see it through. Solets make the most of this beautiful day. Since we're together. </p>
+            </aside>
+         </div>
+         <div class="col-sm-4">
+            <aside class="widget text-center">
+               <img alt="Image" src="{% static 'images/logo.png' %}">
+
+            </aside>
+         </div>
+         <div class="col-sm-4">
+            <aside class="widget">
+               <h3 class="widget-title">Recomondations</h3>
+               <p>Send us your thoughts via an email!</p>
+               <form class="subscribe-form">
+                  <input placeholder="Email Address" type="text">
+                  <button type="submit"><i class="fa fa-envelope-o"></i></button>
+               </form>
+            </aside>
+         </div>
+      </div>
+   </div>
+   <div class="sub-footer">
+      <div class="row">
+         <div class="col-sm-12">
+            <div class="entry-footer">
+               Copyright © {% now "Y" %} - All Rights Reserved
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
+<style>
