@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth import authenticate
+from django.contrib import messages
 
 
 def login(request):
@@ -11,8 +12,10 @@ def login(request):
 
     if user is not None:
       auth.login(request, user)
+      messages.success(request, 'Profile details updated.')
       return redirect('index')
     else:
+      messages.error(request, 'Profile details updated.')
       return render(request,'accounts/login.html',{'error':'Invalid Email Or Password'})
   else:
     return render(request, 'accounts/login.html')
@@ -43,3 +46,9 @@ def signup(request):
         return render(request, 'accounts/signup.html',{'error':'Passwords Must Be Least 5 Characters'})
   else:
     return render(request, 'accounts/signup.html')
+
+
+def logout(request):
+    if request.method == 'POST':
+        auth.logout(request)
+        return redirect('index')

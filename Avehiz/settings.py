@@ -142,3 +142,10 @@ EMAIL_HOST_USER = 'weerasingherhds@gmail.com'
 EMAIL_HOST_PASSWORD = 'RedmiNote9'
 EMAIL_USE_TLS = True
 #EMAIL_USE_SSL = false
+
+# Messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.SUCCESS: 'primary',
+    messages.ERROR: 'danger',
+}
