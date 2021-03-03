@@ -1,54 +1,45 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.contrib import auth
+from django.contrib.auth import authenticate
+
 
 def login(request):
   if request.method == 'POST':
-    username = request.POST['username']
-    password = request.POST['password']
 
-    user = auth.authenticate(username=username, password=password)
+    user = auth.authenticate(username=request.POST['username'],password = request.POST['password'])
 
     if user is not None:
       auth.login(request, user)
-      messages.success(request, 'Welcome Back')
-      return redirect('')
+      return redirect('index')
     else:
-      messages.error(request, 'Invalid credentials')
-      return redirect('login')
+      return render(request,'accounts/login.html',{'error':'Invalid Email Or Password'})
   else:
     return render(request, 'accounts/login.html')
 
+
+
 def signup(request):
+
   if request.method == 'POST':
-    # Get form values
-    first_name = request.POST['first_name']
-    last_name = request.POST['last_name']
+
     username = request.POST['username']
     email = request.POST['email']
     password = request.POST['password']
-    password2 = request.POST['password2']
+    cpassword = request.POST['cpassword']
 
-    # Check if passwords match
-    if password == password2:
-      # Check username
-      if User.objects.filter(username=username).exists():
-        messages.error(request, 'That username is taken')
-        return redirect('register')
-      else:
-        if User.objects.filter(email=email).exists():
-          messages.error(request, 'That email is being used')
-          return redirect('register')
-        else:
-          # Looks good
-          user = User.objects.create_user(username=username, password=password,email=email, first_name=first_name, last_name=last_name)
-          # Login after register
-          # auth.login(request, user)
-          # messages.success(request, 'You are now logged in')
-          # return redirect('index')
-          user.save()
-          messages.success(request, 'You are now registered and can log in')
-          return redirect('login')
+    if len('password')>4:
+          if password == cpassword:
+              try:
+                  user = User.objects.get(username = username)
+                  return render(request, 'accounts/signup.html',{'error':'Username Alrady In Use'})
+              except User.DoesNotExist:
+                  user = User.objects.create_user(username,email,password)
+                  auth.login(request,user)
+                  return redirect('index')
+          else:
+              return render(request, 'accounts/signup.html',{'error':'Passwords Must Match'})
     else:
-      messages.error(request, 'Passwords do not match')
-      return redirect('signup')
+        return render(request, 'accounts/signup.html',{'error':'Passwords Must Be Least 5 Characters'})
   else:
     return render(request, 'accounts/signup.html')
