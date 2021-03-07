@@ -1,24 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-<!-- =-=-=-=-=-=-= Main Content Area =-=-=-=-=-=-= -->
-<div class="main-content-area clearfix">
-   <!-- =-=-=-=-=-=-= Latest Ads =-=-=-=-=-=-= -->
-   <section class="section-padding pattern_dots">
-      <!-- Main Container -->
-      <br><br>
-      <!-- Small Breadcrumb -->
-      <div class="small-breadcrumb">
-         <div class="container">
-            <div class=" breadcrumb-link">
-               <ul>
-                  <li><a href="{% url 'index' %}">Home</a></li>
-                  <li><a class="active" href="{% url 'contact' %}">Contact Us</a></li>
-               </ul>
-            </div>
-         </div>
-      </div>
-      <br><br><br>
+<header>
+  <section class="main-search parallex ">
+
+  </section>
+  <div class="main-content-area clearfix">
+        <div class="small-breadcrumb">
+           <div class="container">
+              <div class=" breadcrumb-link">
+                 <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a class="active" href="{% url 'contact' %}">Contact Us</a></li>
+                 </ul>
+              </div>
+           </div>
+        </div>
+  </div>
+</header>
+
+<section class="section-padding pattern_dots">
+  <div class="main-content-area clearfix">
       <!-- Main Container -->
       <div class="container">
          <!-- Row -->
@@ -85,7 +87,10 @@
          </div>
          <!-- Row End -->
       </div>
+      </div>
       <!-- Main Container End -->
-   </section>
+  </section>
    <img src="{% static 'images\footer-bg1.jpg' %}">
+
+
 {% endblock %}

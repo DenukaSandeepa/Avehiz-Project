@@ -100,6 +100,14 @@
       </div>
 
     </section>
+    <div class="small-breadcrumb">
+       <div class="container">
+          <div class=" breadcrumb-link">
+             <ul>
+                <li><a class="active" href="{% url 'index' %}">Home</a></li>
+             </ul>
+          </div>
+       </div>
       </header>
       <body>
       <!-- =-=-=-=-=-=-= Home Banner 2 End =-=-=-=-=-=-= -->
@@ -570,7 +578,7 @@
       </div>
       <!-- Main Content Area End -->
       <!-- Post Ad Sticky -->
-      <a href="#" class="sticky-post-button">
+      <a href="{% url 'publishing' %}" class="sticky-post-button">
          <span class="sell-icons">
          <i class="flaticon-transport-9"></i>
          </span>

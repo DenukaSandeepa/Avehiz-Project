@@ -1,35 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-<!-- =-=-=-=-=-=-= Transparent Breadcrumb =-=-=-=-=-=-= -->
-<div class="page-header-area">
-   <div class="container">
-      <div class="row">
-         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="header-page">
+<header>
+  <title>Avehiz-LogIn</title>
+  <section class="main-search parallex ">
 
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
+  </section>
+  <div class="main-content-area clearfix">
+        <div class="small-breadcrumb">
+           <div class="container">
+              <div class=" breadcrumb-link">
+                 <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a class="active" href="{% url 'login' %}">Log In</a></li>
+                 </ul>
+              </div>
+           </div>
+        </div>
+  </div>
+</header>
 <!-- Small Breadcrumb -->
-<div class="small-breadcrumb">
-   <div class="container">
-      <div class=" breadcrumb-link">
-         <ul>
-            <li><a href="{% url 'index' %}">Home</a></li>
-            <li><a class="active" href="{% url 'login' %}">Log-In</a></li>
-         </ul>
-      </div>
-   </div>
-</div>
-<!-- Small Breadcrumb -->
-<!-- =-=-=-=-=-=-= Transparent Breadcrumb End =-=-=-=-=-=-= -->
+
 <!-- =-=-=-=-=-=-= Main Content Area =-=-=-=-=-=-= -->
 <div class="main-content-area clearfix">
    <!-- =-=-=-=-=-=-= Latest Ads =-=-=-=-=-=-= -->
-   <section class="section-padding error-page pattern-bg ">
+   <section class="section-padding pattern-bg error-page">
       <!-- Main Container -->
       <div class="container">
          <!-- Row -->
@@ -42,7 +37,7 @@
                    {% csrf_token %}
                      <div class="form-group">
                         <label>User Name</label>
-                        <input placeholder="Your User Name" class="form-control" type="text" name="username" id="username">
+                        <input placeholder="Your User Name" class="form-control" type="text" name="username" id="username" autofocus>
                      </div>
                      <div class="form-group">
                         <label>Password</label>

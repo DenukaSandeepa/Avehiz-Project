@@ -2,33 +2,33 @@
 {% block content %}
 {% load static %}
 <title>Avehiz-About</title>
+<header>
+  <section class="main-search parallex">
+   <center><p>About</p></center>
+  </section>
+  <div class="main-content-area clearfix">
+        <div class="small-breadcrumb">
+           <div class="container">
+              <div class=" breadcrumb-link">
+                 <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a class="active" href="{% url 'about' %}">About Avehiz</a></li>
+                 </ul>
+              </div>
+           </div>
+        </div>
+  </div>
+</header>
 <div class="main-content-area clearfix">
    <!-- =-=-=-=-=-=-= Latest Ads =-=-=-=-=-=-= -->
    <section class="section-padding pattern_dots">
       <!-- Main Container -->
-      <br><br>
-      <!-- Small Breadcrumb -->
-      <div class="small-breadcrumb">
-         <div class="container">
-            <div class=" breadcrumb-link">
-               <ul>
-                  <li><a href="{% url 'index' %}">Home</a></li>
-                  <li><a class="active" href="{% url 'about' %}">About</a></li>
-               </ul>
-            </div>
-         </div>
-      </div>
-      <!-- Small Breadcrumb -->
       <div class="container">
-
          <!-- Row -->
          <div class="row">
-
             <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12">
                <div class="about-us-content">
                   <div class="heading-panel">
-                    <br><br><br>
-
                      <h3 class="main-title text-left">
                         About Avehiz
                      </h3>
@@ -40,8 +40,11 @@
                </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-5 col-xs-12">
-               <div class="about-page-featured-image">
-                  <a href="#"><img src="images\Advertising-PNG-File.png" alt=""></a>
+               <div class="google-maps mb-100">
+                  <iframe src="https://www.google.com/maps/
+                  embed?pb=!1m18!1m12!1m3!1d6663.941725773521!2d79.9992596157702!3d6.720523482531349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
+                  1!3m3!1m2!1s0x3ae24950572fb107%3A0xb86670f21ef51f64!2zNsKwNDMnMjUuNiJOIDgwwrAwMCcwMC4zIkU!5e0!3m2!1sen!2slk!4v1614778615661!5m2!1sen!2slk"
+                 style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                </div>
             </div>
          </div>
@@ -113,7 +116,5 @@
    </div>
    <!-- /.funfacts -->
    <!-- =-=-=-=-=-=-= Statistics Counter End =-=-=-=-=-=-= -->
-   <!-- =-=-=-=-=-=-= Pricing =-=-=-=-=-=-= -->
-
-   </div>
+   <img src="{% static 'images\footer-bg1.jpg' %}">
 {% endblock %}

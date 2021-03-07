@@ -1,0 +1,257 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<header>
+  <title>Avehiz-Publishing</title>
+  <section class="main-search parallex ">
+
+  </section>
+  <div class="small-breadcrumb">
+     <div class="container">
+        <div class=" breadcrumb-link">
+           <ul>
+              <li><a href="{% url 'index' %}">Home</a></li>
+              <li><a class="active" href="{% url 'publishing' %}">publishing</a></li>
+           </ul>
+        </div>
+     </div>
+</header>
+   <body>
+      <!-- =-=-=-=-=-=-= Main Content Area =-=-=-=-=-=-= -->
+      <div class="main-content-area clearfix">
+         <!-- =-=-=-=-=-=-= Latest Ads =-=-=-=-=-=-= -->
+         <section class="section-padding pattern_dots gray ">
+            <!-- Main Container -->
+            <div class="container">
+               <!-- Row -->
+               <div class="row">
+                  <div class="col-md-8 col-lg-8 col-xs-12 col-sm-12">
+                     <!-- end post-padding -->
+                     <div class="post-ad-form postdetails">
+                        <div class="heading-panel">
+                           <h3 class="main-title text-left">
+                              Post Your Ad
+                           </h3>
+                        </div>
+                        <p class="lead">Posting an ad on Avehiz is free!... However, all ads must follow our rules:</p>
+                        {% if error  %}
+                         <center><label style="color:red">{{error}}</label></center>
+                        {% endif %}
+                        <form class="submit-form" method="post" action="{% url 'publishing' %}" enctype="multipart/form-data">
+                           {% csrf_token %}
+                           <!-- Title  -->
+                           <div class="row">
+                              <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+                                 <label class="control-label">Adverticement Title <small>Enter a short title for your adverticement</small></label>
+                                 <input class="form-control" placeholder="Brand new honda civic 2017 for sale" type="text" name="title">
+                              </div>
+                           </div>
+                           <div class="row">
+                              <!-- Type  -->
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">Type<small>Select suitable type for your vehicle</small></label>
+                                 <select class="category form-control" name="type" required>
+                                    <option label="Select Type"></option>
+                                    <option >motorbike</option>
+                                    <option >motorbike-Scooter</option>
+                                    <option >Sedan</option>
+                                    <option >Hatchback</option>
+                                    <option >MPV/minivan</option>
+                                    <option >SUV/4X4</option>
+                                    <option >CUV/Crossover</option>
+                                    <option >Pickup </option>
+                                    <option >Coupe </option>
+                                    <option >Convertible/spyder/cabriolet </option>
+                                    <option >Station wagon/estate</option>
+                                 </select>
+                              </div>
+                              <!-- Brand  -->
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">Brand<small>Select the brand of your vehicle</small></label>
+                                 <select class="category form-control" name="brand">
+                                   <option label="Select Brand" disabled></option>
+                                   <option >Cars & Bikes</option>
+                                   <option >Mobile Phones</option>
+                                   <option >Home Appliances</option>
+                                   <option >Clothing</option>
+                                   <option >Human Resource</option>
+                                   <option >Information Technology</option>
+                                   <option >Marketing</option>
+                                   <option >Others</option>
+                                   <option >Sales</option>
+                                 </select>
+                              </div>
+                           </div>
+                           <!-- end row -->
+                           <div class="row">
+                              <!-- Model  -->
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">Model<small>Select the model of your vehicle</small></label>
+                                 <select class="category form-control" name="modelt">
+                                   <option label="Select Option"></option>
+                                   <option >Cars & Bikes</option>
+                                   <option >Mobile Phones</option>
+                                   <option >Home Appliances</option>
+                                   <option >Clothing</option>
+                                   <option >Human Resource</option>
+                                   <option >Information Technology</option>
+                                   <option >Marketing</option>
+                                   <option >Others</option>
+                                   <option >Sales</option>
+                                 </select>
+                              </div>
+                              <!-- year -->
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">Year</label>
+                                 <input class="form-control" placeholder="eg 2010" type="number" name="year">
+                              </div>
+                           </div>
+                           <div class="row">
+                              <!-- Transmission  -->
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">Transmission Type<small>Select the transmission type</small></label>
+                                 <select class="category form-control" name="transmission">
+                                   <option label="Select Option"></option>
+                                   <option >Cars & Bikes</option>
+                                   <option >Mobile Phones</option>
+                                   <option >Home Appliances</option>
+                                   <option >Clothing</option>
+                                   <option >Human Resource</option>
+                                   <option >Information Technology</option>
+                                   <option >Marketing</option>
+                                   <option >Others</option>
+                                   <option >Sales</option>
+                                 </select>
+                              </div>
+                              <!-- Fuel -->
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">Fuel Type<small>Select the fuel type</small></label>
+                                 <select class="category form-control" name="fuel">
+                                   <option label="Select Option"></option>
+                                   <option >Cars & Bikes</option>
+                                   <option >Mobile Phones</option>
+                                   <option >Home Appliances</option>
+                                   <option >Clothing</option>
+                                   <option >Human Resource</option>
+                                   <option >Information Technology</option>
+                                   <option >Marketing</option>
+                                   <option >Others</option>
+                                   <option >Sales</option>
+                                 </select>
+                              </div>
+                           </div>
+                           <div class="row">
+                             <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                <label class="control-label">Milage</label>
+                                <input class="form-control" placeholder="eg 10000" type="number" name="milage">
+                             </div>
+                             <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                <label class="control-label">Engine</label>
+                                <input class="form-control" placeholder="eg 4M40 2800cc" type="text" name="engine">
+                             </div>
+                           </div>
+                           <!-- Image Upload  -->
+                           <div class="row">
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">Main photos for your ad <small>Please add images of your ad. (350x450)</small></label>
+                                 <input type="file" name="icon" >
+                              </div>
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">Photos for your ad <small>Please add images of your ad. (350x450)</small></label>
+                                 <input type="file" name="image" >
+                              </div>
+                           </div>
+                           <!-- end row -->
+                           <!-- Ad Description  -->
+                           <div class="row">
+                              <div class="col-md-12 col-lg-12 col-xs-12  col-sm-12">
+                                 <label class="control-label">Ad Description <small>Enter long description for your project</small></label>
+                                 <textarea  rows="12" class="form-control" placeholder="" name="description"></textarea>
+                              </div>
+                           </div>
+                           <!-- end row -->
+                           <!-- Ad Condition  -->
+                           <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                              <label class="control-label">Fuel Type<small>Select the fuel type</small></label>
+                              <select class="category form-control" name="condition">
+                                <option label="Select Option"></option>
+                                <option >Cars & Bikes</option>
+                                <option >Mobile Phones</option>
+                                <option >Home Appliances</option>
+                                <option >Clothing</option>
+                                <option >Human Resource</option>
+                                <option >Information Technology</option>
+                                <option >Marketing</option>
+                                <option >Others</option>
+                                <option >Sales</option>
+                              </select>
+                           </div>
+                           <!-- end row -->
+                           <div class="row">
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">Price</label>
+                                 <input class="form-control" placeholder="eg John Doe" type="number" name="price">
+                              </div>
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">Mobile Number<small>number for conformation</small></label>
+                                 <input class="form-control" placeholder="eg +92-0321-123-456-789" type="text" name="tel">
+                              </div>
+                           </div>
+                           <!-- end row -->
+                           <div class="row">
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">City<small>nearest main city</small></label>
+                                 <input class="form-control" placeholder="eg panadura" type="text" name="city">
+                              </div>
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">Address<small>your permanent address</small></label>
+                                 <input class="form-control" placeholder="eg House no 8 Streent no 2 New York" type="text" name="address">
+                              </div>
+                           </div>
+                           <!-- end row -->
+                           <input type="reset" value="Clear" class="btn pull-left btn-danger">
+                           <button class="btn btn-primary pull-right">Publish My Ad</button>
+                        </form>
+                     </div>
+                     <!-- end post-ad-form-->
+                  </div>
+                  <!-- end col -->
+                  <!-- Right Sidebar -->
+                  <div class="col-md-4 col-xs-12 col-sm-12">
+                     <!-- Sidebar Widgets -->
+                     <div class="blog-sidebar">
+                        <!-- Categories -->
+                        <div class="widget">
+                           <div class="widget-heading">
+                              <h4 class="panel-title"><a>Saftey Tips </a></h4>
+                           </div>
+                           <div class="widget-content">
+                              <p class="lead">Posting an ad on <a href="#">AdForest.com</a> is free! However, all ads must follow our rules:</p>
+                              <ol>
+                                 <li>Make sure you post in the correct category.</li>
+                                 <li>Do not post the same ad more than once or repost an ad within 48 hours.</li>
+                                 <li>Do not upload pictures with watermarks.</li>
+                                 <li>Do not post ads containing multiple items unless it's a package deal.</li>
+                                 <li>Do not put your email or phone numbers in the title or description.</li>
+                                 <li>Make sure you post in the correct category.</li>
+                                 <li>Do not post the same ad more than once or repost an ad within 48 hours.</li>
+                                 <li>Do not upload pictures with watermarks.</li>
+                                 <li>Do not post ads containing multiple items unless it's a package deal.</li>
+                              </ol>
+                           </div>
+                        </div>
+                        <!-- Latest News -->
+                     </div>
+                     <!-- Sidebar Widgets End -->
+                  </div>
+                  <!-- Middle Content Area  End --><!-- end col -->
+               </div>
+               <!-- Row End -->
+            </div>
+            <!-- Main Container End -->
+         </section>
+   </body>
+
+
+
+{% endblock %}
