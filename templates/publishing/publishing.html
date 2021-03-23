@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
 {% load static %}
 <header>
@@ -37,128 +38,82 @@
                         {% if error  %}
                          <center><label style="color:red">{{error}}</label></center>
                         {% endif %}
-                        <form class="submit-form" method="post" action="{% url 'publishing' %}" enctype="multipart/form-data">
+                        <form class="submit-form" method="POST" action="{% url 'publishing' %}" enctype="multipart/form-data">
                            {% csrf_token %}
-                           <!-- Title  -->
                            <div class="row">
                               <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
                                  <label class="control-label">Adverticement Title <small>Enter a short title for your adverticement</small></label>
-                                 <input class="form-control" placeholder="Brand new honda civic 2017 for sale" type="text" name="title">
+                                   {{ form.title|as_crispy_field }}
                               </div>
                            </div>
                            <div class="row">
                               <!-- Type  -->
-                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12" style="height:20px;">
                                  <label class="control-label">Type<small>Select suitable type for your vehicle</small></label>
-                                 <select class="category form-control" name="type" required>
-                                    <option label="Select Type"></option>
-                                    <option >motorbike</option>
-                                    <option >motorbike-Scooter</option>
-                                    <option >Sedan</option>
-                                    <option >Hatchback</option>
-                                    <option >MPV/minivan</option>
-                                    <option >SUV/4X4</option>
-                                    <option >CUV/Crossover</option>
-                                    <option >Pickup </option>
-                                    <option >Coupe </option>
-                                    <option >Convertible/spyder/cabriolet </option>
-                                    <option >Station wagon/estate</option>
-                                 </select>
+                                 {{ form.type|as_crispy_field }}
                               </div>
                               <!-- Brand  -->
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Brand<small>Select the brand of your vehicle</small></label>
-                                 <select class="category form-control" name="brand">
-                                   <option label="Select Brand" disabled></option>
-                                   <option >Cars & Bikes</option>
-                                   <option >Mobile Phones</option>
-                                   <option >Home Appliances</option>
-                                   <option >Clothing</option>
-                                   <option >Human Resource</option>
-                                   <option >Information Technology</option>
-                                   <option >Marketing</option>
-                                   <option >Others</option>
-                                   <option >Sales</option>
-                                 </select>
+                                 <label class="control-label">Brand</label>
+                                 {{ form.brand|as_crispy_field }}
                               </div>
                            </div>
                            <!-- end row -->
                            <div class="row">
                               <!-- Model  -->
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Model<small>Select the model of your vehicle</small></label>
-                                 <select class="category form-control" name="modelt">
-                                   <option label="Select Option"></option>
-                                   <option >Cars & Bikes</option>
-                                   <option >Mobile Phones</option>
-                                   <option >Home Appliances</option>
-                                   <option >Clothing</option>
-                                   <option >Human Resource</option>
-                                   <option >Information Technology</option>
-                                   <option >Marketing</option>
-                                   <option >Others</option>
-                                   <option >Sales</option>
-                                 </select>
+                                 <label class="control-label">Model</label>
+                                 {{ form.model|as_crispy_field }}
                               </div>
                               <!-- year -->
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
                                  <label class="control-label">Year</label>
-                                 <input class="form-control" placeholder="eg 2010" type="number" name="year">
+                                 {{ form.year|as_crispy_field }}
                               </div>
                            </div>
                            <div class="row">
                               <!-- Transmission  -->
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
                                  <label class="control-label">Transmission Type<small>Select the transmission type</small></label>
-                                 <select class="category form-control" name="transmission">
-                                   <option label="Select Option"></option>
-                                   <option >Cars & Bikes</option>
-                                   <option >Mobile Phones</option>
-                                   <option >Home Appliances</option>
-                                   <option >Clothing</option>
-                                   <option >Human Resource</option>
-                                   <option >Information Technology</option>
-                                   <option >Marketing</option>
-                                   <option >Others</option>
-                                   <option >Sales</option>
-                                 </select>
+                                 {{ form.transmission|as_crispy_field }}
                               </div>
                               <!-- Fuel -->
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
                                  <label class="control-label">Fuel Type<small>Select the fuel type</small></label>
-                                 <select class="category form-control" name="fuel">
-                                   <option label="Select Option"></option>
-                                   <option >Cars & Bikes</option>
-                                   <option >Mobile Phones</option>
-                                   <option >Home Appliances</option>
-                                   <option >Clothing</option>
-                                   <option >Human Resource</option>
-                                   <option >Information Technology</option>
-                                   <option >Marketing</option>
-                                   <option >Others</option>
-                                   <option >Sales</option>
-                                 </select>
+                                 {{ form.fuel|as_crispy_field }}
                               </div>
                            </div>
                            <div class="row">
                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
                                 <label class="control-label">Milage</label>
-                                <input class="form-control" placeholder="eg 10000" type="number" name="milage">
+                                {{ form.milage|as_crispy_field }}
                              </div>
                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
                                 <label class="control-label">Engine</label>
-                                <input class="form-control" placeholder="eg 4M40 2800cc" type="text" name="engine">
+                                {{ form.engine|as_crispy_field }}
                              </div>
                            </div>
                            <!-- Image Upload  -->
                            <div class="row">
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
                                  <label class="control-label">Main photos for your ad <small>Please add images of your ad. (350x450)</small></label>
-                                 <input type="file" name="icon" >
+                                 {{ form.image1|as_crispy_field }}
                               </div>
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Photos for your ad <small>Please add images of your ad. (350x450)</small></label>
-                                 <input type="file" name="image" >
+                                 <label class="control-label">Photos for your ad <small>Please add images of your ad. (350x450) </small></label>
+                                 {{ form.image2|as_crispy_field }}
+                              </div>
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">Photos for your ad <small>Please add images of your ad. (350x450) </small></label>
+                                 {{ form.image3|as_crispy_field }}
+                              </div>
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">Photos for your ad <small>Please add images of your ad. (350x450) </small></label>
+                                 {{ form.image4|as_crispy_field }}
+                              </div>
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">Photos for your ad <small>Please add images of your ad. (350x450) </small></label>
+                                 {{ form.image5|as_crispy_field }}
                               </div>
                            </div>
                            <!-- end row -->
@@ -166,51 +121,48 @@
                            <div class="row">
                               <div class="col-md-12 col-lg-12 col-xs-12  col-sm-12">
                                  <label class="control-label">Ad Description <small>Enter long description for your project</small></label>
-                                 <textarea  rows="12" class="form-control" placeholder="" name="description"></textarea>
+                                 {{ form.description|as_crispy_field }}
                               </div>
-                           </div>
-                           <!-- end row -->
-                           <!-- Ad Condition  -->
-                           <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                              <label class="control-label">Fuel Type<small>Select the fuel type</small></label>
-                              <select class="category form-control" name="condition">
-                                <option label="Select Option"></option>
-                                <option >Cars & Bikes</option>
-                                <option >Mobile Phones</option>
-                                <option >Home Appliances</option>
-                                <option >Clothing</option>
-                                <option >Human Resource</option>
-                                <option >Information Technology</option>
-                                <option >Marketing</option>
-                                <option >Others</option>
-                                <option >Sales</option>
-                              </select>
                            </div>
                            <!-- end row -->
                            <div class="row">
+                              <!-- condition  -->
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Price</label>
-                                 <input class="form-control" placeholder="eg John Doe" type="number" name="price">
+                                 <label class="control-label">Condition<small>Select vehicle condition </small></label>
+                                 {{ form.condition|as_crispy_field }}
                               </div>
+                              <!-- category -->
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Mobile Number<small>number for conformation</small></label>
-                                 <input class="form-control" placeholder="eg +92-0321-123-456-789" type="text" name="tel">
+                                 <label class="control-label">Category<small>Select the fuel type</small></label>
+                                 {{ form.category|as_crispy_field }}
                               </div>
                            </div>
                            <!-- end row -->
                            <div class="row">
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">City<small>nearest main city</small></label>
-                                 <input class="form-control" placeholder="eg panadura" type="text" name="city">
+                                 <label class="control-label">Price in Rs</label>
+                                 {{ form.price|as_crispy_field }}
                               </div>
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Address<small>your permanent address</small></label>
-                                 <input class="form-control" placeholder="eg House no 8 Streent no 2 New York" type="text" name="address">
+                                 <label class="control-label">Mobile Number<small>Number for conformation</small></label>
+                                 {{ form.tel|as_crispy_field }}
                               </div>
                            </div>
                            <!-- end row -->
+                           <div class="row">
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">City<small>Nearest main city</small></label>
+                                 {{ form.city|as_crispy_field }}
+                              </div>
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">Address<small>Your permanent address</small></label>
+                                 {{ form.address|as_crispy_field }}
+                              </div>
+                           </div>
+
+
                            <input type="reset" value="Clear" class="btn pull-left btn-danger">
-                           <button class="btn btn-primary pull-right">Publish My Ad</button>
+                           <input type="submit" class="btn btn-primary pull-right" name="Publish My Ad">
                         </form>
                      </div>
                      <!-- end post-ad-form-->

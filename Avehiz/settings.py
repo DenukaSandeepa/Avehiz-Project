@@ -31,8 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'crispy_forms',
-    'listing_ads.apps.ListingAdsConfig',
     'publishing.apps.PublishingConfig',
     'accounts.apps.AccountsConfig',
     'django.contrib.admin',
@@ -41,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
 
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -150,3 +149,5 @@ MESSAGE_TAGS = {
     messages.SUCCESS: 'primary',
     messages.ERROR: 'danger',
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

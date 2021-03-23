@@ -1,9 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth import authenticate
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-
+from .models import Profile
+from publishing.models import publishing
 
 def login(request):
   if request.method == 'POST':
@@ -52,3 +54,15 @@ def logout(request):
     if request.method == 'POST':
         auth.logout(request)
         return redirect('index')
+
+def user_profile(request, username):
+    user = User.objects.get(username=username)
+    context = {
+       "user": user
+    }
+    return render(request, 'accounts/profile.html', context)
+
+def userads(request, username):
+    publish = publishing.objects.filter(owner=request.user).order_by('-pub_date')
+
+    return render(request,'accounts/userads.html',{'publish': publish })

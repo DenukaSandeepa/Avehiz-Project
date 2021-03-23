@@ -1,42 +1,61 @@
 from django.shortcuts import render,redirect, get_object_or_404
+from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from .forms import CreateAdForm
 from .models import publishing
 from django.utils import timezone
+from django.core.paginator import Paginator
+from django.db.models import Q
+from django.urls import reverse_lazy,reverse
 
 # Create your views here.
 @login_required(login_url='login')
 def posting(request):
-    if request.method == 'POST':
+    if request.method == 'GET':
+        return render(request,'publishing/publishing.html',{'form':CreateAdForm()})
 
-        if request.POST['title'] and request.POST['type'] and request.POST['brand'] and request.POST['modelt'] and request.POST['year'] and request.POST['transmission'] and request.POST['fuel'] and request.POST['milage'] and request.FILES['icon'] and request.FILES['image'] and request.POST['price'] and request.POST['tel'] and request.POST['city']:
-            publish = publishing()
-            publish.title=request.POST.get('title')
-            publish.type=request.POST.get('type')
-            publish.brand=request.POST.get('brand')
-            publish.model=request.POST.get('modelt')
-            publish.year=request.POST.get('year')
-            publish.fuel=request.POST.get('fuel')
-            publish.milage=request.POST.get('milage')
-            publish.transmission=request.POST.get('transmission')
-            publish.engine=request.POST.get('engine')
-            publish.icon=request.FILES.get('icon')
-            publish.image=request.FILES.get('image')
-            publish.description=request.POST.get('description')
-            publish.condition=request.POST.get('condition')
-            publish.price=request.POST.get('price')
-            publish.tel=request.POST.get('tel')
-            publish.city=request.POST.get('city')
-            publish.address=request.POST.get('address')
-            publish.pub_date=timezone.datetime.now()
-            publish.owner=request.user
-            publish.save()
-            return redirect('/publishing/' + str(publish.id))
-
-        else:
-            return render(request,'publishing/publishing.html',{'error':'You need to fill important data'})
     else:
-        return render(request,'publishing/publishing.html')
+        form = CreateAdForm(request.POST,request.FILES or None)
+        if form.is_valid():
+            newform = form.save(commit=False)
+            newform.owner = request.user
+            newform.save()
+            return HttpResponseRedirect(reverse('ads'))
+        return render(request,'publishing/publishing.html',{'form':CreateAdForm()})
 
 def detail(request,publish_id):
   publish = get_object_or_404(publishing, pk=publish_id)
-  return render(request, 'publishing/details.html',{'publish':publish})
+  related = publishing.objects.filter(type=publish.type).order_by('-pub_date').exclude(id=publish.id)
+  return render(request, 'publishing/details.html',{'publish':publish,'related':related })
+
+
+def likes(request,publish_id):
+    if request.method == 'POST':
+        publish = get_object_or_404(publishing, pk=publish_id)
+        publish.vote_total+=1
+        publish.save()
+
+        return redirect('/publishing/' + str(publish.id))
+
+def ads(request):
+    publish = publishing.objects.order_by('-pub_date')
+    return render(request,'publishing/ads.html',{'publish': publish})
+
+def update(request,publish_id):
+    publish = get_object_or_404(publishing,pk=publish_id)
+    if request.method == 'GET':
+        form = CreateAdForm(instance=publish)
+        return render(request,'publishing/updatead.html',{'publish':publish, 'form':form})
+    else:
+
+            form = CreateAdForm(request.POST,instance=publish)
+            if form.is_valid():
+                    newform = form.save(commit=False)
+                    newform.owner = request.user
+                    newform.save()
+                    return render(request,'publishing/publishing.html',{'publish':publish, 'form':form})
+
+
+
+def delete(request,publish_id):
+    return render(request,'publishing/deletead.html')
