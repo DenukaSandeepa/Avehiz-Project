@@ -49,7 +49,7 @@ class publishing(models.Model):
 
 
       title = models.TextField(max_length=100)
-      pub_date = models.DateTimeField(auto_now_add=True)
+      pub_date = models.DateTimeField(default=datetime.now)
       type = models.TextField(max_length=100, choices = type_choices)
       brand = models.TextField(max_length=100)
       model = models.TextField(max_length=50)

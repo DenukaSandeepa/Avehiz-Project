@@ -21,6 +21,7 @@ def posting(request):
             newform.owner = request.user
             newform.save()
             return HttpResponseRedirect(reverse('ads'))
+
         return render(request,'publishing/publishing.html',{'form':CreateAdForm()})
 
 def detail(request,publish_id):
@@ -48,14 +49,18 @@ def update(request,publish_id):
         return render(request,'publishing/updatead.html',{'publish':publish, 'form':form})
     else:
 
-            form = CreateAdForm(request.POST,instance=publish)
+            form = CreateAdForm(request.POST,request.FILES,instance=publish)
             if form.is_valid():
                     newform = form.save(commit=False)
                     newform.owner = request.user
                     newform.save()
-                    return render(request,'publishing/publishing.html',{'publish':publish, 'form':form})
+                    return redirect('/publishing/' + str(publish.id))
+            else:
+                return render(request,'publishing/updatead.html',{'publish':publish, 'form':form, 'error': 'Bad Data'})
 
-
-
+@login_required
 def delete(request,publish_id):
-    return render(request,'publishing/deletead.html')
+    delete = get_object_or_404(publishing,pk=publish_id)
+    if request.method == 'POST':
+        delete.delete()
+        return HttpResponseRedirect(reverse('ads'))
