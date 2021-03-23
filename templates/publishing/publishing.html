@@ -42,19 +42,18 @@
                            {% csrf_token %}
                            <div class="row">
                               <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-                                 <label class="control-label">Adverticement Title <small>Enter a short title for your adverticement</small></label>
                                    {{ form.title|as_crispy_field }}
                               </div>
                            </div>
                            <div class="row">
                               <!-- Type  -->
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12" style="height:20px;">
-                                 <label class="control-label">Type<small>Select suitable type for your vehicle</small></label>
+
                                  {{ form.type|as_crispy_field }}
                               </div>
                               <!-- Brand  -->
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Brand</label>
+
                                  {{ form.brand|as_crispy_field }}
                               </div>
                            </div>
@@ -62,57 +61,57 @@
                            <div class="row">
                               <!-- Model  -->
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Model</label>
+
                                  {{ form.model|as_crispy_field }}
                               </div>
                               <!-- year -->
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Year</label>
+
                                  {{ form.year|as_crispy_field }}
                               </div>
                            </div>
                            <div class="row">
                               <!-- Transmission  -->
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Transmission Type<small>Select the transmission type</small></label>
+
                                  {{ form.transmission|as_crispy_field }}
                               </div>
                               <!-- Fuel -->
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Fuel Type<small>Select the fuel type</small></label>
+
                                  {{ form.fuel|as_crispy_field }}
                               </div>
                            </div>
                            <div class="row">
                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                <label class="control-label">Milage</label>
+
                                 {{ form.milage|as_crispy_field }}
                              </div>
                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                <label class="control-label">Engine</label>
+
                                 {{ form.engine|as_crispy_field }}
                              </div>
                            </div>
                            <!-- Image Upload  -->
                            <div class="row">
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Main photos for your ad <small>Please add images of your ad. (350x450)</small></label>
+
                                  {{ form.image1|as_crispy_field }}
                               </div>
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Photos for your ad <small>Please add images of your ad. (350x450) </small></label>
+
                                  {{ form.image2|as_crispy_field }}
                               </div>
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Photos for your ad <small>Please add images of your ad. (350x450) </small></label>
+
                                  {{ form.image3|as_crispy_field }}
                               </div>
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Photos for your ad <small>Please add images of your ad. (350x450) </small></label>
+
                                  {{ form.image4|as_crispy_field }}
                               </div>
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Photos for your ad <small>Please add images of your ad. (350x450) </small></label>
+
                                  {{ form.image5|as_crispy_field }}
                               </div>
                            </div>
@@ -120,7 +119,7 @@
                            <!-- Ad Description  -->
                            <div class="row">
                               <div class="col-md-12 col-lg-12 col-xs-12  col-sm-12">
-                                 <label class="control-label">Ad Description <small>Enter long description for your project</small></label>
+
                                  {{ form.description|as_crispy_field }}
                               </div>
                            </div>
@@ -128,34 +127,34 @@
                            <div class="row">
                               <!-- condition  -->
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Condition<small>Select vehicle condition </small></label>
+
                                  {{ form.condition|as_crispy_field }}
                               </div>
                               <!-- category -->
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Category<small>Select the fuel type</small></label>
+
                                  {{ form.category|as_crispy_field }}
                               </div>
                            </div>
                            <!-- end row -->
                            <div class="row">
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Price in Rs</label>
+
                                  {{ form.price|as_crispy_field }}
                               </div>
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Mobile Number<small>Number for conformation</small></label>
+
                                  {{ form.tel|as_crispy_field }}
                               </div>
                            </div>
                            <!-- end row -->
                            <div class="row">
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">City<small>Nearest main city</small></label>
+
                                  {{ form.city|as_crispy_field }}
                               </div>
                               <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                                 <label class="control-label">Address<small>Your permanent address</small></label>
+                              
                                  {{ form.address|as_crispy_field }}
                               </div>
                            </div>
