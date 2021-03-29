@@ -18,81 +18,45 @@
          <div class="search-container">
             <!-- Form -->
             <h2>Welcome To Avehiz... What are you looking for ?</h2>
-            <form>
+            <form action="{% url 'search' %}">
                <!-- Search Input -->
                <div class="col-md-2 col-sm-4 col-xs-12 no-padding">
                   <div class="form-group">
-                     <input type="text" class="form-control banner-icon-search" name="keyword" placeholder="Model.." value="">
+                     <input type="text" class="form-control banner-icon-search" name="keyword" placeholder="Search...." value="">
                   </div>
                </div>
 
                <!-- Search Brand -->
                <div class="col-md-2 col-sm-4 col-xs-12 no-padding">
                   <div class="form-group">
-                     <select class="category form-control">
-                        <option label="Select Brand"></option>
-                        <option value="0">Cars & Bikes</option>
-                        <option value="1">Mobile Phones</option>
-                        <option value="2">Home Appliances</option>
-                        <option value="3">Clothing</option>
-                        <option value="4">Human Resource</option>
-                        <option value="5">Information Technology</option>
-                        <option value="6">Marketing</option>
-                        <option value="7">Others</option>
-                        <option value="8">Sales</option>
+                     <select class="category form-control" name="category">
+                       <option label="Select Category" value="{{ searched.category }}"></option>
+                       <option value="New">New</option>
+                       <option value="Used">Used</option>
                      </select>
                   </div>
                </div>
                <!-- Search Transmition -->
                <div class="col-md-2 col-sm-4 col-xs-12 no-padding">
-                  <div class="form-group">
-                     <select class="category form-control">
-                        <option label="Select Transmition"></option>
-                        <option value="0">Cars & Bikes</option>
-                        <option value="1">Mobile Phones</option>
-                        <option value="2">Home Appliances</option>
-                        <option value="3">Clothing</option>
-                        <option value="4">Human Resource</option>
-                        <option value="5">Information Technology</option>
-                        <option value="6">Marketing</option>
-                        <option value="7">Others</option>
-                        <option value="8">Sales</option>
-                     </select>
-                  </div>
+                 <div class="form-group">
+                    <input type="text" class="form-control" name="model" placeholder="Model" value="">
+                 </div>
                </div>
                <!-- Search furl -->
-               <div class="col-md-2 col-sm-4 col-xs-12 no-padding">
-                  <div class="form-group">
-                     <select class="category form-control" >
-                        <option label="Select Fuel Type"></option>
-                        <option value="0">Cars & Bikes</option>
-                        <option value="1">Mobile Phones</option>
-                        <option value="2">Home Appliances</option>
-                        <option value="3">Clothing</option>
-                        <option value="4">Human Resource</option>
-                        <option value="5">Information Technology</option>
-                        <option value="6">Marketing</option>
-                        <option value="7">Others</option>
-                        <option value="8">Sales</option>
-                     </select>
-                  </div>
+               <div class="col-md-2 col-sm-4 col-xs-12 no-padding"  name="category">
+                 <div class="form-group">
+                    <input type="number" class="form-control" name="year" placeholder="Model Year" value="">
+                 </div>
                </div>
                <!-- Search Location -->
-               <div class="col-md-2 col-sm-4 col-xs-12 no-padding">
-                  <div class="form-group">
-                     <select class="cities form-control">
-                        <option value="0">SriLanka</option>
-                        <option value="1">Australia</option>
-                        <option value="2">Bahrain</option>
-                        <option value="3">Canada</option>
-                        <option value="4">Denmark</option>
-                        <option value="5">Germany</option>
-                     </select>
-                  </div>
+               <div class="col-md-2 col-sm-4 col-xs-12 no-padding"  name="category">
+                 <div class="form-group">
+                    <input type="text" class="form-control" name="city" placeholder="City" value="">
+                 </div>
                </div>
                <div class="col-md-2 col-sm-4 col-xs-12 no-padding">
                   <div class="form-group form-action">
-                     <button type="button" class="btn btn-theme btn-search-submit">Search</button>
+                     <button type="submit" class="btn btn-theme btn-search-submit">Search</button>
                   </div>
                </div>
             </form>

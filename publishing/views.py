@@ -39,8 +39,14 @@ def likes(request,publish_id):
         return redirect('/publishing/' + str(publish.id))
 
 def ads(request):
+    count = publishing.objects.count()
     publish = publishing.objects.order_by('-pub_date')
-    return render(request,'publishing/ads.html',{'publish': publish})
+
+    paginator = Paginator(publish, 6)
+    page = request.GET.get('page')
+    paged_listings = paginator.get_page(page)
+
+    return render(request,'publishing/ads.html',{'page': paged_listings ,'count':count})
 
 def update(request,publish_id):
     publish = get_object_or_404(publishing,pk=publish_id)
@@ -64,3 +70,45 @@ def delete(request,publish_id):
     if request.method == 'POST':
         delete.delete()
         return HttpResponseRedirect(reverse('ads'))
+
+def search(request):
+  adlist = publishing.objects.order_by('-pub_date')
+
+  if 'keyword' in request.GET:
+    keyword = request.GET['keyword']
+    if keyword:
+      adlist = adlist.filter(title__icontains=keyword)
+
+  if 'category' in request.GET:
+    category = request.GET['category']
+    if category:
+      adlist = adlist.filter(category__icontains=category)
+
+  if 'model' in request.GET:
+    model = request.GET['model']
+    if model:
+      adlist = adlist.filter(model__icontains=model)
+
+  if 'year' in request.GET:
+    year = request.GET['year']
+    if year:
+      adlist = adlist.filter(year__iexact=year)
+
+  if 'city' in request.GET:
+    city = request.GET['city']
+    if city:
+      adlist = adlist.filter(city__icontains=city)
+
+  paginator = Paginator(adlist, 6)
+  page = request.GET.get('page')
+  paged_listings = paginator.get_page(page)
+
+  context = {
+       'count':adlist.count(),
+       'page':paged_listings,
+       'searched': request.GET
+  }
+
+
+
+  return render(request, 'publishing/search.html', context)

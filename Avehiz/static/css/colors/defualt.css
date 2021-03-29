@@ -27,8 +27,9 @@ span.app-store-btn:hover, .social-links-two a:hover , .search-section .search-op
 }
 .pagination > .active > a:hover, .pagination li:hover > a, .pagination > .active > a , .category-grid a:hover , .pricing .featured a.btn-theme:hover , .btn-orange {
 	background-color: #0275d8;
-	border-color: #0275d8;
+	border-color: #d1d1d1;
 	color: #fff !important;
+  box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.4);
 }
 .small-breadcrumb .breadcrumb-link ul li a.active {
     border-bottom: 4px solid #0275d8;

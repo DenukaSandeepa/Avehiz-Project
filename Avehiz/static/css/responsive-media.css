@@ -13,11 +13,11 @@
     .header {
         padding: 20px 0;
     }
-   
+
     .background-rotator .search-section {
         top: 265px;
     }
-	
+
 }
 
 
@@ -59,7 +59,7 @@
         right: 0;
         left: auto;
     }
-   
+
     .hero .content {
         padding: 20px 40px;
         top: 50px;
@@ -88,25 +88,25 @@
 		width: 25%;
     }
 	 .happy-customer {
-		 text-align:center; 
+		 text-align:center;
 		}
     .happy-customer h3::after {
-	display:none;	
+	display:none;
 }
 .happy-customer a {
-	margin-bottom:30px;	
+	margin-bottom:30px;
 }
     .happy-customer p {
         color: #fff;
         padding-right: 10px;
 		 margin-top: 0;
     }
-	
+
 	.statistics-box {
     display: block;
 	position: relative;
 	}
-	
+
     .statistics-box i {
         font-size: 64px;
 		  display: block;
@@ -183,7 +183,7 @@
     .fun-facts .statistics-content p {
         font-size: 14px;
     }
-    
+
     .ad-listing .content-area .additional-info {
         margin: 0;
         padding: 0;
@@ -324,7 +324,7 @@
 		   width:100%;
 	}
 	.search-section .search-options > li {
-		width:176px;	
+		width:176px;
 	}
 	.search-section .search-options > li:nth-child(4) {
     width: 140px;
@@ -361,14 +361,14 @@
 
 
 .mobile-image-content {
-	display:none;	
+	display:none;
 }
 
 .ad-listing .content-area {
     padding: 10px 0 0;
 }
 .content-area .ad-details {
-	margin-top:0;	
+	margin-top:0;
 }
 
 .happy-customer p {
@@ -376,16 +376,16 @@
 	line-height: 35px;
 }
 .blog-post {
-	min-height:506px;	
+	min-height:506px;
 }
 .app-download-button, .btn.app-download-button
 {
-	margin-bottom:10px;	
+	margin-bottom:10px;
 }
 
 .colored-header #menu-1 .menu-list-items .menu-links li a.btn-light {
 	display:block;
-	text-align:center;	
+	text-align:center;
 }
 .icon-box {
 margin-bottom: 30px;
@@ -406,7 +406,7 @@ margin-bottom: 30px;
 }
 
 .main-menu .mega-menu .menu-logo > li > a img {
-	display:block;	
+	display:block;
 }
 .main-menu .mega-menu > section.menu-list-items {
     padding: 10px 25px;
@@ -433,7 +433,7 @@ margin-bottom: 30px;
     clear: none;
 }
 .app-download-section .app-download-section-wrapper .app-download-section-container i {
-	display:none;	
+	display:none;
 }
 .hero .content p:first-child {
     font-size: 30px;
@@ -455,11 +455,11 @@ margin-bottom: 30px;
 }
 
 .call-action p {
-	text-align:center;	
+	text-align:center;
 }
 
 .parallex-button {
-	text-align:center;	
+	text-align:center;
 }
 
 .list-group-items .category-grid-box-1 .image {
@@ -498,7 +498,7 @@ margin-bottom: 30px;
     padding: 10px 25px;
 }
 .comment-section {
-	margin-bottom:30px;	
+	margin-bottom:30px;
 }
 
 .user-profile a img {
@@ -506,7 +506,7 @@ margin-bottom: 30px;
 }
 
 .leftbar-stick.blog-sidebar {
-	margin-bottom:30px;	
+	margin-bottom:30px;
 }
 .profile-tabs .nav-tabs a {
     text-align: left;
@@ -517,7 +517,7 @@ margin-bottom: 30px;
 }
 .blog-sidebar{
 	margin-top:30px;
-	overflow:hidden;	
+	overflow:hidden;
 }
 
 .subscribe input, .subscribe button {
@@ -533,10 +533,10 @@ margin-bottom: 30px;
 }
 .contactInfo {
 	margin-top:30px;
-	overflow:hidden;	
+	overflow:hidden;
 }
 .submit-form .form-control {
-	margin-bottom:10px;	
+	margin-bottom:10px;
 }
 .hero-form-sub {
     color: #fff;
@@ -619,16 +619,16 @@ margin-bottom: 30px;
     }
 }
 @media (min-width: 320px) and (max-width: 767px) {
- 
+
     .ad-modal {
         width: 100%;
     }
-    
+
     .header-top .dropdown-menu {
         right: 0;
         left: auto;
     }
-   
+
     .hero .content .search-holder button {
         right: 2px;
         height: 55px;
@@ -680,8 +680,8 @@ margin-bottom: 30px;
         padding: 35px 5px;
         font-size: 15px;
     }
-    
-    
+
+
     .footer-area .contact-info li {
         font-size: 14px;
     }
@@ -723,7 +723,7 @@ margin-bottom: 30px;
     .search-container {
         padding: 200px 0 0;
     }
-    
+
     .heading-text {
         width: 100%;
     }
@@ -783,7 +783,7 @@ margin-bottom: 30px;
         font-size: 20px;
         padding-right: 0;
     }
-    
+
 
     .latest-ads .panel .panel-heading .nav > li > a {
         padding: 18px 7px;
@@ -830,7 +830,7 @@ margin-bottom: 30px;
         display: block;
         width: 100%;
     }
-    
+
     .list-group-items .category-grid-box-1 .image,
     .list-group-items .category-grid-box-1 .short-description-1 {
         width: 100%;
@@ -857,12 +857,12 @@ margin-bottom: 30px;
         margin-bottom: 30px;
         clear: both;
     }
-    
+
     .app-text-section {
         padding-bottom: 50px;
         padding-top: 50px;
     }
-   
+
     #hero .search-holder .nav-tabs > li > a i {
         font-size: 36px;
     }
@@ -879,7 +879,7 @@ margin-bottom: 30px;
     .icon-box .icon-text h3.title {
         color: #fff;
     }
-    
+
     .background-rotator .heading-caption h1 {
         font-size: 20px;
     }
@@ -912,9 +912,9 @@ margin-bottom: 30px;
     .minimal-footer .address-info {
         padding-bottom: 15px;
     }
-	
+
 	.background-rotator {
-		margin-top:21px;	
+		margin-top:21px;
 	}
 	.transparent-header.mobile-custom{
    	 background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
@@ -932,7 +932,7 @@ margin-bottom: 30px;
         padding: 50px 0;
         background-color: #fff;
     }
-    
+
     .background-rotator-slider .item img {
         margin-top: 146px;
     }
@@ -1032,7 +1032,7 @@ margin-bottom: 30px;
 		   width:100%;
 	}
 	.search-section .search-options > li {
-		width:100%;	
+		width:100%;
 	}
 	.search-section .search-options .select2-container--default .select2-selection--single {
     margin-bottom: 5px !important ;
@@ -1062,10 +1062,10 @@ margin-bottom: 30px;
 .menu-search-bar .btn-light {
 	display:block;
 	text-align:center !important;
-	margin-top:15px;	
+	margin-top:15px;
 }
 .mega-menu .menu-mobile-collapse-trigger {
-	top:5px;	
+	top:5px;
 }
 .alert-box-container .form-control {
     margin-bottom: 20px;
@@ -1078,7 +1078,7 @@ margin-bottom: 30px;
 	width:270px;
 }
 .tooltip-content::after {
-	left:37px;	
+	left:37px;
 }
 
 .mega-menu .menu-links > li {
@@ -1112,7 +1112,7 @@ margin-bottom: 30px;
 }
 .colored-header #menu-1 .menu-list-items .menu-links li a.btn-light {
 	display:block;
-	text-align:center;	
+	text-align:center;
 }
 .icon-box , .search-form .form-control {
 margin-bottom: 20px;
@@ -1125,7 +1125,7 @@ margin-bottom: 20px;
 }
 .header .btn-orange{
 	margin-top:20px;
-	
+
 }
 .main-menu .mega-menu > section.menu-list-items {
     padding: 10px 25px;
@@ -1137,7 +1137,7 @@ margin-bottom: 20px;
     margin-top: 20px;
 }
 .main-menu .mega-menu .menu-logo > li > a img {
-	display:block;	
+	display:block;
 }
 .main-menu .mega-menu .menu-links > li > a {
     color: #191919;
@@ -1190,7 +1190,7 @@ margin-bottom: 20px;
     width: 100%;
 }
 .ad-archive-desc .ad-price {
-	float:none;	
+	float:none;
 }
 
 
@@ -1207,7 +1207,7 @@ margin-bottom: 20px;
 	padding:0;
 }
 .sticky-ad-detail {
-	display:none !important;	
+	display:none !important;
 }
 
 .ad-listing-price p {
@@ -1232,7 +1232,7 @@ margin-bottom: 20px;
     margin-left: 0;
 }
 .comment-info .author-desc .author-title ul.list-inline.pull-right {
-	float:none !important;	
+	float:none !important;
 	margin-top: 10px;
 }
 .comment-list .children {
@@ -1241,10 +1241,10 @@ margin-bottom: 20px;
 }
 
 .comment-section {
-	margin-bottom:30px;	
+	margin-bottom:30px;
 }
 .leftbar-stick.blog-sidebar {
-	margin-bottom:30px;	
+	margin-bottom:30px;
 }
 .profile-tabs .nav-tabs a {
     text-align: left !important;
@@ -1254,14 +1254,14 @@ margin-bottom: 20px;
 	 margin-bottom: 10px;
 }
 .profile-section .skin-minimal .list li label {
-	margin-top:-30px;	
+	margin-top:-30px;
 	padding-left: 35px;
 }
 .search-result-item .image-link {
     max-height: 100%;
 }
 .user-stats {
-	margin-bottom:10px;	
+	margin-bottom:10px;
 }
 .dashboard-menu-container ul li {
     width: 50%;
@@ -1276,7 +1276,7 @@ margin-bottom: 20px;
 
 .message-content , .blog-sidebar{
 	margin-top:30px;
-	overflow:hidden;	
+	overflow:hidden;
 }
 .chat-form .form-group {
     float: left;
@@ -1314,21 +1314,21 @@ margin-bottom: 20px;
     font-size: 16px;
 }
 .components .btn {
-	margin-bottom:10px;	
+	margin-bottom:10px;
 }
 
 .form-grid , .content-info{
-	margin-bottom:30px;	
+	margin-bottom:30px;
 }
 .content-info{
-	margin-top:60px;	
+	margin-top:60px;
 }
 .help-block {
     text-align: left;
 }
 .contactInfo {
 	margin-top:30px;
-	overflow:hidden;	
+	overflow:hidden;
 }
 .postdetails .skin-minimal ul.list li {
     float: left;
