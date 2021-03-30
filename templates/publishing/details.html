@@ -306,7 +306,83 @@
                            <img src="{{ user.profile.image.url }}" alt="">
                         </div>
                         <div class="user-information no-padding col-md-8 col-sm-9 col-xs-8">
-                           <span class="user-name"><a class="hover-color" href="{% url 'profile' publish.owner %}">{{ publish.owner }}</a></span>
+                          <div class="popup">
+                            <button type="submit" name="owner"  onclick="myFunction()" value="{{ publish.owner }}" class="popupbutton"><span><h5>@{{ publish.owner }}</h5></span></button>
+                                <div class="popuptext" id="myPopup"> {{ publish.owner.profile.full_name }}
+                                  <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                    <img src="{{ publish.owner.profile.image.url }}">
+                                  </div>
+                                  <div class="ad-info-1">
+                                     <ul class="">
+                                       <div class="row">
+                                         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                           <div class="row">
+                                              <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5" align="left">
+                                                <li>Email :</li>
+                                              </div>
+                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7 " align="left">
+                                                <li>{{ publish.owner.email }}</li>
+                                              </div>
+                                           </div>
+                                           <div class="row">
+                                              <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5" align="left">
+                                                <li>Tel No :</li>
+                                              </div>
+                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7 " align="left">
+                                                <li>{{ publish.owner.profile.tel }}</li>
+                                              </div>
+                                           </div>
+                                           <div class="row">
+                                              <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5" align="left">
+                                                <li>Profession :</li>
+                                              </div>
+                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7 " align="left">
+                                                <li>{{ publish.owner.profile.you_are }}</li>
+                                              </div>
+                                           </div>
+
+                                          <div class="row">
+                                             <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5" align="left">
+                                               <li>Country :</li>
+                                             </div>
+                                             <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7  " align="left">
+                                               <li>{{ publish.owner.profile.country }}</li>
+                                             </div>
+                                          </div>
+
+                                          <div class="row">
+                                             <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5" align="left">
+                                               <li>City :</li>
+                                             </div>
+                                             <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7 " align="left">
+                                               <li>{{ publish.owner.profile.city }}</li>
+                                             </div>
+                                          </div>
+                                          <div class="row">
+                                             <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5" align="left">
+                                               <li>Address :</li>
+                                             </div>
+                                             <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7 " align="left">
+                                               <li>{{ publish.owner.profile.address }}</li>
+                                             </div>
+                                          </div>
+
+                                         </div>
+                                       </div>
+                                     </ul>
+                                  </div>
+
+
+                                </div>
+                          </div>
+
+                               <script>
+
+                               function myFunction() {
+                                var popup = document.getElementById("myPopup");
+                                popup.classList.toggle("show");
+                               }
+                               </script>
                            <div class="item-date">
                               <span class="ad-pub">Published on: {{ publish.pub_date }}</span><br>
                               <a href="#" class="link">More Ads</a>
@@ -326,12 +402,7 @@
                   </div>
 
                   <!-- Recent Ads -->
-                  <div class="widget">
-                     <div class="widget-heading">
-                        <h4 class="panel-title"><a>Recent Ads</a></h4>
-                     </div>
 
-                  </div>
                   <!-- Saftey Tips  -->
                   <div class="widget">
                      <div class="widget-heading">

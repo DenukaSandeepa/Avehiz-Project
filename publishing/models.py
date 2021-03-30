@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class publishing(models.Model):
       type_choices = (
       ('Motorbike','Motorbike'),
-      ('Motorbike-Scooter','Motorbike-Scooter'),
+      ('Scooter','Motorbike'),
       ('Sedan','Sedan'),
       ('Hatchback','Hatchback'),
       ('MPV/Minivan','MPV/Minivan'),
@@ -14,8 +14,12 @@ class publishing(models.Model):
       ('CUV/Crossover','CUV/Crossover'),
       ('Pickup','Pickup'),
       ('Coupe','Coupe'),
-      ('Convertible/Spyder/Cabriolet','Convertible/Spyder/Cabriolet'),
-      ('Station Wagon/Estate','Station Wagon/Estate'),
+      ('Convertible','Convertible'),
+      ('Station Wagon','Station Wagon'),
+      ('Van','Van'),
+      ('Three-Wheeler','Three-Wheeler'),
+      ('Lorry','Lorry'),
+      ('Bus','Bus'),
       )
 
       fuel_choices = (

@@ -81,6 +81,7 @@
 
          <!-- =-=-=-=-=-=-= Popular Categories =-=-=-=-=-=-= -->
          <section class="custom-padding gray popular-categories">
+           <form class="" action="{% url 'type' %}" method="GET">
             <!-- Main Container -->
             <div class="heading-panel">
                <div class="col-xs-12 col-md-12 col-sm-12 text-center">
@@ -96,7 +97,7 @@
                   <div class="col-md-3 col-xs-12 col-sm-6">
                      <div class="box">
                         <img alt="img" src="{% static 'images\types\saden.jpg' %}">
-                        <h4><a href="">Saden</a></h4>
+                        <button type="submit" name="sedan" value="sedan" class="type_button"><h4><a>Sedan</a></h4></button>
                         <strong>1,265 Jobs</strong>
                      </div>
                   </div>
@@ -104,7 +105,7 @@
                   <div class="col-md-3 col-xs-12 col-sm-6">
                      <div class="box">
                         <img alt="img" src="{% static 'images\types\SUV.jpg' %}">
-                        <h4><a href="#">SUV</a></h4>
+                        <button type="submit" name="suv" value="suv" class="type_button"><h4><a>SUV</a></h4></button>
                         <strong>1,265 Ads</strong>
                      </div>
                   </div>
@@ -112,7 +113,7 @@
                   <div class="col-md-3 col-xs-12 col-sm-6">
                      <div class="box">
                         <img alt="img" src="{% static 'images\types\coupe.jpg' %}">
-                        <h4><a href="#">Coupe</a></h4>
+                        <button type="submit" name="coupe" value="coupe" class="type_button"><h4><a>Coupe</a></h4></button>
                         <strong>6,213 Ads</strong>
                      </div>
                   </div>
@@ -120,7 +121,7 @@
                   <div class="col-md-3 col-xs-12 col-sm-6">
                      <div class="box">
                         <img alt="img" src="{% static 'images\types\pickup.jpg' %}">
-                        <h4><a href="#">Pickup</a></h4>
+                        <button type="submit" name="pickup" value="pickup" class="type_button"><h4><a>Pickup</a></h4></button>
                         <strong>3,750 Ads</strong>
                      </div>
                   </div>
@@ -128,7 +129,7 @@
                   <div class="col-md-3 col-xs-12 col-sm-6">
                      <div class="box">
                         <img alt="img" src="{% static 'images\types\cuvc.jpg' %}">
-                        <h4><a href="#">Crossover & CUV</a></h4>
+                        <button type="submit" name="CUV/Crossover" value="CUV/Crossover" class="type_button"><h4><a>Crossover & CUV</a></h4></button>
                         <strong>5,913 Ads</strong>
                      </div>
                   </div>
@@ -136,7 +137,7 @@
                   <div class="col-md-3 col-xs-12 col-sm-6">
                      <div class="box">
                         <img alt="img" src="{% static 'images\types\convertible.jpg' %}">
-                        <h4><a href="#">Convertible</a></h4>
+                        <button type="submit" name="Convertible" value="Convertible" class="type_button"><h4><a>Convertible</a></h4></button>
                         <strong>9,942 Ads</strong>
                      </div>
                   </div>
@@ -144,7 +145,7 @@
                   <div class="col-md-3 col-xs-12 col-sm-6">
                      <div class="box">
                         <img alt="img" src="{% static 'images\types\harchback.jpg' %}">
-                        <h4><a href="#">Harchback</a></h4>
+                        <button type="submit" name="Hatchback" value="Hatchback" class="type_button"><h4><a>Hatchback</a></h4></button>
                         <strong>3,891 Ads</strong>
                      </div>
                   </div>
@@ -152,7 +153,14 @@
                   <div class="col-md-3 col-xs-12 col-sm-6">
                      <div class="box">
                         <img alt="img" src="{% static 'images\types\minivan.jpg' %}">
-                        <h4><a href="#">Minivan</a></h4>
+                        <button type="submit" name="MPV/Minivan" value="MPV/Minivan" class="type_button"><h4><a>MPV & Minivan</a></h4></button>
+                        <strong>7,418 Ads</strong>
+                     </div>
+                  </div>
+                  <div class="col-md-3 col-xs-12 col-sm-6">
+                     <div class="box">
+                        <img alt="img" src="{% static 'images\types\station.jpeg' %}">
+                        <button type="submit" name="Station Wagon" value="Station Wagon" class="type_button"><h4><a>Station Wagon & Estate</a></h4></button>
                         <strong>7,418 Ads</strong>
                      </div>
                   </div>
@@ -160,7 +168,7 @@
                   <div class="col-md-3 col-xs-12 col-sm-6">
                      <div class="box">
                         <img alt="img" src="{% static 'images\types\van.jpg' %}">
-                        <h4><a href="#">Van</a></h4>
+                        <button type="submit" name="van" value="van" class="type_button"><h4><a>Van</a></h4></button>
                         <strong>7,418 Ads</strong>
                      </div>
                   </div>
@@ -169,7 +177,7 @@
                      <div class="box">
                         <img alt="img" src="{% static 'images\types\bus.jpeg' %}">
 
-                        <h4><a href="#">Bus</a></h4>
+                        <button type="submit" name="bus" value="bus" class="type_button"><h4><a>Bus</a></h4></button>
                         <strong>7,418 Ads</strong>
                      </div>
                   </div>
@@ -177,7 +185,7 @@
                   <div class="col-md-3 col-xs-12 col-sm-6">
                      <div class="box">
                         <img alt="img" src="{% static 'images\types\lorry.jpg' %}">
-                        <h4><a href="#">Lorry</a></h4>
+                        <button type="submit" name="lorry" value="lorry" class="type_button"><h4><a>Lorry</a></h4></button>
                         <strong>7,418 Ads</strong>
                      </div>
                   </div>
@@ -185,7 +193,7 @@
                   <div class="col-md-3 col-xs-12 col-sm-6">
                      <div class="box">
                         <img alt="img" src="{% static 'images\types\bike.jpg' %}">
-                        <h4><a href="#">Motorcycle</a></h4>
+                        <button type="submit" name="motorbike" value="motorbike" class="type_button"><h4><a>Motorbike</a></h4></button>
                         <strong>7,418 Ads</strong>
                      </div>
                   </div>
@@ -193,20 +201,21 @@
                   <div class="col-md-3 col-xs-12 col-sm-6">
                      <div class="box">
                         <img alt="img" src="{% static 'images\types\scooter.jpeg' %}">
-                        <h4><a href="#">Motorcycle-Scooters</a></h4>
+                        <button type="submit" name="scooter" value="scooter" class="type_button"><h4><a>Scooter</a></h4></button>
                         <strong>7,418 Ads</strong>
                      </div>
                   </div>
                   <div class="col-md-3 col-xs-12 col-sm-6">
                      <div class="box">
                         <img alt="img" src="{% static 'images\types\threewheeler.jpeg' %}">
-                        <h4><a href="#">Three-wheeler</a></h4>
+                        <button type="submit" name="Three-Wheeler" value="Three-Wheeler" class="type_button"><h4><a>Three-Wheeler</a></h4></button>
                         <strong>7,418 Ads</strong>
                      </div>
                   </div>
                </div>
                <!-- Row End -->
             </div>
+            </form>
             <!-- Main Container End -->
          </section>
          <!-- =-=-=-=-=-=-= Popular Categories End =-=-=-=-=-=-= -->

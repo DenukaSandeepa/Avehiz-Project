@@ -8,5 +8,6 @@ urlpatterns = [
     path('contact/',views.contact,name ='contact'),
     path('<int:publish_id>',detail_views.detail, name='details'),
     path('<int:publish_id>/likes',detail_views.likes, name='likes'),
+    path('type', views.type, name='type'),
 
 ]

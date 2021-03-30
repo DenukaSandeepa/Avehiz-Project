@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Profile
 from publishing.models import publishing
+from django.core.paginator import Paginator
+from .forms import EditProfile
 
 def login(request):
   if request.method == 'POST':
@@ -57,12 +59,44 @@ def logout(request):
 
 def user_profile(request, username):
     user = User.objects.get(username=username)
-    context = {
-       "user": user
-    }
-    return render(request, 'accounts/profile.html', context)
+    publish = publishing.objects.filter(owner=request.user).order_by('-pub_date')
+    if request.method == 'GET':
+        form = EditProfile(instance=user.profile)
+        context = {
+            'count':publish.count(),
+            'form':form,
+        }
+        return render(request, 'accounts/profile.html', context)
+    else:
+        form = EditProfile(request.POST,request.FILES,instance=user.profile)
+        if form.is_valid():
+                newform = form.save(commit=False)
+                newform.owner = request.user
+                newform.save()
+                context = {
+                    'count':publish.count(),
+                    'form':form,
+                }
+                return render(request,'accounts/profile.html',context)
+        else:
+            context = {
+                'count':publish.count(),
+                'form':form,
+                'error':'Bad Data'
+            }
+            return render(request,'accounts/profile.html',context)
+
 
 def userads(request, username):
     publish = publishing.objects.filter(owner=request.user).order_by('-pub_date')
 
-    return render(request,'accounts/userads.html',{'publish': publish })
+    paginator = Paginator(publish, 6)
+    page = request.GET.get('page')
+    paged_listings = paginator.get_page(page)
+
+    context = {
+         'count':publish.count(),
+         'page':paged_listings,
+         'searched': request.GET
+   }
+    return render(request,'accounts/userads.html', context)

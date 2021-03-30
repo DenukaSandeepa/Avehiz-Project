@@ -1,8 +1,10 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .forms import CreateAdForm
 from .models import publishing
+from accounts.models import Profile
 from django.utils import timezone
 from django.core.paginator import Paginator
 from django.db.models import Q
@@ -27,6 +29,8 @@ def posting(request):
 def detail(request,publish_id):
   publish = get_object_or_404(publishing, pk=publish_id)
   related = publishing.objects.filter(type=publish.type).order_by('-pub_date').exclude(id=publish.id)
+
+
   return render(request, 'publishing/details.html',{'publish':publish,'related':related })
 
 
@@ -108,7 +112,4 @@ def search(request):
        'page':paged_listings,
        'searched': request.GET
   }
-
-
-
   return render(request, 'publishing/search.html', context)

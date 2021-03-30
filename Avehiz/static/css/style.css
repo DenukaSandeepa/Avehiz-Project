@@ -368,6 +368,10 @@ ul {
 .btn-md {
 	padding: 10px 20px;
 }
+.type_button{
+	border: none;
+	background-color: #fff;
+}
 .btn-sm {
 	padding: 8px 16px;
 	font-size: 12px;
@@ -1159,7 +1163,7 @@ ul {
 	outline: none;
 }
 .search-container button {
-	background-color: #505050;
+
 	border: medium none;
 	box-sizing: border-box;
 	color: #fff;
@@ -6232,6 +6236,7 @@ ul.category-list-data li:hover a span {
 	text-align: center;
 	width: 80px;
 	z-index: 999;
+	box-shadow: 0 40px 40px 0 rgba(0, 0, 0, 0.2), 0 30px 30px 0 rgba(0, 0, 0, 0.19);
 }
 .sticky-post-button:focus {
 	color:#fff !important;
@@ -6248,6 +6253,7 @@ ul.category-list-data li:hover a span {
 }
 .sticky-post-button:hover {
 	color: #fff !important;
+	box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.4);
 }
 .sticky-post-button h4 {
 	font-size: 14px;
@@ -6836,9 +6842,16 @@ span.app-store-btn {
 	float: left;
 	width: 100%;
 }
+.user-profile img{
+	height: 500px;
+	width: 100%;
+}
+
 .user-profile {
 	background-color: #fff;
 	margin-bottom: 5px;
+	box-shadow: 0 40px 40px 0 rgba(0, 0, 0, 0.2), 0 30px 30px 0 rgba(0, 0, 0, 0.19);
+
 }
 .user-profile .profile-detail {
 	padding: 20px 30px;
@@ -7062,10 +7075,12 @@ span.app-store-btn {
 .profile-section {
 	background: #f7f7f7 none repeat scroll 0 0;
 	padding: 20px;
+	box-shadow: 0 40px 40px 0 rgba(0, 0, 0, 0.2), 0 30px 30px 0 rgba(0, 0, 0, 0.19);
 }
 .profile-edit {
 	background: #fff none repeat scroll 0 0;
 	padding: 20px;
+	box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.4);
 }
 .profile-edit h2 {
 	font-weight: 200;
@@ -7124,10 +7139,12 @@ span.app-store-btn {
 }
 .profile-tabs .nav-tabs > li > a {
 	border: medium none;
+	box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.4);
 }
 .profile-tabs .nav-tabs > li > a:hover {
 	background: #fff none repeat scroll 0 0;
 	color: #232323;
+
 }
 .profile-tabs .tab-content img {
 	margin-bottom: 15px;
@@ -8519,4 +8536,70 @@ ul.listingViewIcon li.shortByListingLi ul li a {
     position: realtive;
     width: 100%;
 
+}
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 300px;
+	height: auto;
+	box-shadow: 0 40px 40px 0 rgba(0, 0, 0, 0.2), 0 30px 30px 0 rgba(0, 0, 0, 0.19);
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+.popup .popuptext img{
+	width: 100%;
+	height: 200px;
+	margin-bottom: 10px
+}
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+.popupbutton{
+	border: none;
+	background-color: #fff;
 }

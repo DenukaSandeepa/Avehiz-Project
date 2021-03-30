@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
 {% load static %}
 <header>
@@ -37,39 +38,27 @@
                            <h6>{{ user.username }}</h6>
                            <ul class="contact-details">
                               <li>
-                                 <i class="fa fa-map-marker"></i> UK London
+                                 <i class="fa fa-map-marker"></i>
+                                 {% if user.profile.address %}
+                                 {{ user.profile.address }}
+                                 {% else %}
+                                 Address Not Set!
+                                 {% endif %}
                               </li>
                               <li>
                                  <i class="fa fa-envelope"></i>{{ user.email }}
                               </li>
                               <li>
-                                 <i class="fa fa-phone"></i> {{ user.date_joined }}
+                                 <i class="fa fa-clock-o"></i> {{ user.date_joined }}
                               </li>
                            </ul>
                         </div>
                         <ul>
                            <li class="active"><a href="profile.html">Profile</a></li>
-                           <li><a href="{% url 'userads' user.username %}">My Ads <span class="badge">45</span></a></li>
-                           <li><a href="favourite.html">Favourites Ads <span class="badge">15</span></a></li>
-                           <li><a href="archives.html">Archives</a></li>
-                           <li><a href="messages.html">Messages</a></li>
-                           <li><a href="#">Logout</a></li>
+                           <li><a href="{% url 'userads' user.username %}">My Ads <span class="badge">{{ count }}</span></a></li>
                         </ul>
                      </div>
                      <!-- Categories -->
-                     <div class="widget">
-                        <div class="widget-heading">
-                           <h4 class="panel-title"><a>Change Your Plan</a></h4>
-                        </div>
-                        <div class="widget-content">
-                           <select class=" form-control">
-                              <option label="Select Option"></option>
-                              <option value="0">Free</option>
-                              <option value="1">Premium</option>
-                              <option value="2">Featured</option>
-                           </select>
-                        </div>
-                     </div>
                   </div>
                   <div class="col-md-8 col-sm-12 col-xs-12">
                      <!-- Row -->
@@ -78,41 +67,63 @@
                            <ul class="nav nav-justified nav-tabs">
                               <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
                               <li><a href="#edit" data-toggle="tab">Edit Profile</a></li>
-                              <li><a href="#payment" data-toggle="tab">Plan Setting</a></li>
-                              <li><a href="#settings" data-toggle="tab">Notification Settings</a></li>
                            </ul>
                            <div class="tab-content">
                               <div class="profile-edit tab-pane fade in active" id="profile">
                                  <h2 class="heading-md">Manage your Name, ID and Email Addresses.</h2>
                                  <p>Below are the name and email addresses on file for your account.</p>
                                  <dl class="dl-horizontal">
-                                    <dt><strong>Your name </strong></dt>
+                                    <dt><strong>Full name </strong></dt>
                                     <dd>
-                                       John Doe
+                                      {% if user.profile.full_name %}
+                                         {{ user.profile.full_name }}
+                                      {% else %}
+                                         Full Name Not Set!
+                                      {% endif %}
                                     </dd>
                                     <dt><strong>Email Address </strong></dt>
                                     <dd>
-                                       contact@scriptsbundle.com
+                                       {{ user.email }}
                                     </dd>
                                     <dt><strong>Phone Number </strong></dt>
                                     <dd>
-                                       (0423) 12-2345-789
+                                      {% if user.profile.tel %}
+                                         {{ user.profile.tel }}
+                                      {% else %}
+                                         Telephone Number Not Set!
+                                      {% endif %}
                                     </dd>
                                     <dt><strong>Country </strong></dt>
                                     <dd>
-                                       England
+                                      {% if user.profile.country %}
+                                         {{ user.profile.country }}
+                                      {% else %}
+                                         Country Not Set!
+                                      {% endif %}
                                     </dd>
                                     <dt><strong>City </strong></dt>
                                     <dd>
-                                       London
+                                      {% if user.profile.city %}
+                                         {{ user.profile.city }}
+                                      {% else %}
+                                         City Not Set!
+                                      {% endif %}
                                     </dd>
                                     <dt><strong>You are a </strong></dt>
                                     <dd>
-                                       Dealer
+                                      {% if user.profile.you_are %}
+                                         {{ user.profile.you_are }}
+                                      {% else %}
+                                         Your Profession Not Set!
+                                      {% endif %}
                                     </dd>
                                     <dt><strong>Address </strong></dt>
                                     <dd>
-                                       Lahore, PK
+                                      {% if user.profile.address %}
+                                         {{ user.profile.address }}
+                                      {% else %}
+                                         Address Not Set!
+                                      {% endif %}
                                     </dd>
                                  </dl>
                               </div>
@@ -120,77 +131,39 @@
                                  <h2 class="heading-md">Manage your Security Settings</h2>
                                  <p>Manage Your Account</p>
                                  <div class="clearfix"></div>
-                                 <form>
+                                 <form method="POST" action="{% url 'profile' user.username %}" enctype="multipart/form-data">
+                                   {% if error  %}
+                                    <center><label style="color:red">{{error}}</label></center>
+                                   {% endif %}
+                                    {% csrf_token %}
                                     <div class="row">
-                                       <div class="col-md-6 col-sm-6 col-xs-12">
-                                          <label>Your Name </label>
-                                          <input type="text" class="form-control margin-bottom-20">
-                                       </div>
-                                       <div class="col-md-6 col-sm-6 col-xs-12">
-                                          <label>Email Address <span class="color-red">*</span></label>
-                                          <input type="text" class="form-control margin-bottom-20">
-                                       </div>
                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                          <label>Contact Number <span class="color-red">*</span></label>
-                                          <input type="text" class="form-control margin-bottom-20">
+                                          {{ form.full_name|as_crispy_field }}
+                                        </div>
+                                       <div class="col-md-12 col-sm-12 col-xs-12">
+                                          {{ form.tel|as_crispy_field }}
+                                        </div>
+                                       <div class="col-md-6 col-sm-12 col-xs-12 margin-bottom-20">
+                                          {{ form.country|as_crispy_field }}
                                        </div>
                                        <div class="col-md-6 col-sm-12 col-xs-12 margin-bottom-20">
-                                          <label>Country <span class="color-red">*</span></label>
-                                          <select class="form-control">
-                                             <option value="0">SriLanka</option>
-                                             <option value="1">Australia</option>
-                                             <option value="2">Bahrain</option>
-                                             <option value="3">Canada</option>
-                                             <option value="4">Denmark</option>
-                                             <option value="5">Germany</option>
-                                          </select>
+                                            {{ form.city|as_crispy_field }}
                                        </div>
                                        <div class="col-md-6 col-sm-12 col-xs-12 margin-bottom-20">
-                                          <label>City <span class="color-red">*</span></label>
-                                          <select class="form-control">
-                                             <option value="0">London</option>
-                                             <option value="1">Edinburgh</option>
-                                             <option value="2">Wales</option>
-                                             <option value="3">Cardiff</option>
-                                             <option value="4">Bradford</option>
-                                             <option value="5">Cambridge</option>
-                                          </select>
+                                            {{ form.you_are|as_crispy_field }}
                                        </div>
                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                          <label>Address <span class="color-red">*</span></label>
-                                          <textarea class="form-control margin-bottom-20" rows="3"></textarea>
+                                            {{ form.address|as_crispy_field }}
+                                       </div>
+                                       <div class="col-md-12 col-sm-12 col-xs-12">
+                                            {{ form.image|as_crispy_field }}
                                        </div>
                                     </div>
-                                    <div class="row margin-bottom-20">
-                                       <div class="form-group">
-                                          <div class="col-md-9">
-                                             <div class="input-group">
-                                                <span class="input-group-btn">
-                                                <span class="btn btn-default btn-file">
-                                                Browse… <input type="file" id="imgInp">
-                                                </span>
-                                                </span>
-                                                <input type="text" class="form-control" readonly="">
-                                             </div>
-                                          </div>
-                                          <div class="col-md-3">
-                                             <img id="img-upload" class="img-responsive" src="images\users\2.jpg" alt="">
-                                          </div>
-                                       </div>
-                                    </div>
+
                                     <div class="clearfix"></div>
                                     <div class="row">
                                        <div class="col-md-8 col-sm-8 col-xs-12">
-                                          <div class="form-group">
-                                             <div class="skin-minimal">
-                                                <ul class="list">
-                                                   <li>
-                                                      <input type="checkbox" id="minimal-checkbox-7">
-                                                      <label for="minimal-checkbox-7">i agree <a href="#">Terms of Services</a></label>
-                                                   </li>
-                                                </ul>
-                                             </div>
-                                          </div>
+
                                        </div>
                                        <div class="col-md-4 col-sm-4 col-xs-12 text-right">
                                           <button type="submit" class="btn btn-theme btn-sm">Update My Info</button>

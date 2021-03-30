@@ -14,7 +14,7 @@
             <ul class="listnone">
               {% if user.is_authenticated %}
 
-              <li><a href="{% url 'profile' user.username %}"><i class="icon-profile-male"></i>{{ user.id }}</a></li>
+              <li><a href="{% url 'profile' user.username %}"><i class="icon-profile-male"></i>{{ user.username }}</a></li>
               <li><a href="javascript:{document.getElementById('logout').submit()}"><i class="fa fa-sign-in"></i> Log-Out
               </a>
               </li>
