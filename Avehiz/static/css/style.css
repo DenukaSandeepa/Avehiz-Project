@@ -43,7 +43,7 @@ Designed and Development by: ScriptsBundle
     33.0 -  Fancy Categories
     34.0 -  Category Grid 4
     35.0 -  Category Grid 5
-    36.0 -  Breadcrumbs
+    36.0 -  breadcrumbs
     37.0 -  Carousel Slider
 	38.0 -  Parallex Overlays
 	39.0 -  Countries Ads Section
@@ -275,15 +275,18 @@ video, object {
 }
 .custom-padding {
 	padding: 90px 0 60px 0;
+
 }
 .custom-padding-2 {
 	padding: 90px 0 110px 0;
+	margin: 40px;
 }
 .gray {
 	background-color: #666666;
 }
 .white-bg {
 	background-color: #fff;
+	box-shadow: 25px 25px 25px 0 rgba(0, 0, 0, 0.2), 25px 25px 25px 0 rgba(0, 0, 0, 0.19);
 }
 /* =-=-=-=-=-=-= Typography  =-=-=-=-=-=-= */
 
@@ -611,11 +614,78 @@ ul {
 	-o-transition: all 500ms ease;
 	transition: all 500ms ease
 }
-
+.cat-box{
+	background-color: #666666;
+}
+.cat-box-inner{
+	background-color: #666666;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 20px;
+}
 /* =-=-=-=-=-=-= Heading Styles =-=-=-=-=-=-= */
+.heading-panel-index {
+	margin-bottom: 30px;
+	overflow: hidden;
+	background: #1d282c;
+}
+.cate-box{
+	background: #1d282c;
+	margin-right: 80px;
+}
 .heading-panel {
 	margin-bottom: 30px;
 	overflow: hidden;
+}
+.heading-panel-details {
+	margin-bottom: 40px;
+	overflow: hidden;
+	background-color: #1d282c ;
+	box-shadow: 25px 25px 25px 0 rgba(0, 0, 0, 0.2), 25px 25px 25px 0 rgba(0, 0, 0, 0.19);
+}
+.widget .heading-panel-tips{
+	margin-bottom: 20px;
+	overflow: hidden;
+	background-color: #1d282c ;
+	box-shadow: 15px 15px 15px 0 rgba(0, 0, 0, 0.2), 0 15px 15px 0 rgba(0, 0, 0, 0.19);
+}
+.widget .heading-panel-tips{
+	font-size: 26px;
+	font-weight:0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	position: relative;
+	letter-spacing: 5px;
+	text-transform: capitalize;
+	color: #fff;
+}
+.heading-panel-recentads{
+	margin-bottom: 30px;
+	overflow: hidden;
+	background-color: #1d282c ;
+	box-shadow: 25px 25px 25px 0 rgba(0, 0, 0, 0.2), 0 25px 25px 0 rgba(0, 0, 0, 0.19);
+}
+.heading-panel-details h3.main-title {
+	font-size: 32px;
+	font-weight: 10;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	position: relative;
+	letter-spacing: 15px;
+	text-transform: capitalize;
+	color: #fff;
+	text-shadow: 0 1px 0 #333333,
+               0 1px 0 #404040,
+               0 2px 0 #4d4d4d,
+               0 3px 0 #595959,
+               0 4px 0 #666666,
+               0 5px 1px rgba(0,0,0,.1),
+               0 0 3px rgba(0,0,0,.1),
+               0 1px 1px rgba(0,0,0,.3),
+               0 1px 1px rgba(0,0,0,.2),
+               0 3px 3px rgba(0,0,0,.25),
+               0 5px 5px rgba(0,0,0,.2),
+               0 10px 10px rgba(0,0,0,.15);
 }
 .heading-panel h3.main-title {
 	display: inline-block;
@@ -635,6 +705,7 @@ ul {
 .heading-panel h1 {
 	font-size: 64px;
 	font-weight: 500;
+	letter-spacing: 20px;
 	padding-bottom: 20px;
 	position: relative;
 	text-transform: capitalize;
@@ -651,7 +722,31 @@ ul {
                0 5px 10px rgba(0,0,0,.25),
                0 10px 10px rgba(0,0,0,.2),
                0 20px 20px rgba(0,0,0,.15);
+	border-bottom: 2px solid #0275d8
 }
+.heading-panel-recentads h1 {
+	font-size: 48px;
+	font-weight: 300;
+	padding-bottom: 20px;
+	position: relative;
+	letter-spacing: 15px;
+	text-transform: capitalize;
+	color: #fff;
+	text-shadow: 0 1px 0 #333333,
+               0 2px 0 #404040,
+               0 3px 0 #4d4d4d,
+               0 4px 0 #595959,
+               0 5px 0 #666666,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+
+
 
 }
 .heading-panel h1::before {
@@ -666,7 +761,6 @@ ul {
 	width: 99px;
 }
 .heading-panel h1::after {
-	background-color: #242424;
 	bottom: 0;
 	content: "";
 	height: 1px;
@@ -1570,7 +1664,7 @@ ul.category-list-style li a span {
 	float: left;
 	display: block;
 	width:100%;
-	  box-shadow: 0 40px 40px 0 rgba(0, 0, 0, 0.2), 0 30px 30px 0 rgba(0, 0, 0, 0.19);
+	  box-shadow: 25px 25px 25px 0 rgba(0, 0, 0, 0.2), 0 25px 25px 0 rgba(0, 0, 0, 0.19);
 }
 .category-grid-box-1:after {
 	content: '';
@@ -2693,7 +2787,7 @@ ul.add_info li i {
 	margin-top: 15px;
 	margin-bottom: 15px;
 	overflow: hidden;
-	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 15px 15px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 25px 25px 25px 0 rgba(0, 0, 0, 0.2), 25px 25px 25px 0 rgba(0, 0, 0, 0.19);
 }
 .single-ad .ad-box .short-features span strong {
 	color: #232323;
@@ -2713,10 +2807,10 @@ ul.add_info li i {
 }
 .ad-share .ad-box {
 	cursor: pointer;
-	box-shadow: 0 50px 50px 0 rgba(0, 0, 0, 0.2), 0 15px 15px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 25px 25px 25px 0 rgba(0, 0, 0, 0.2), 25px 25px 25px 0 rgba(0, 0, 0, 0.19);
 }
 .ad-box {
-	box-shadow: 0 50px 50px 0 rgba(0, 0, 0, 0.2), 0 15px 15px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 25px 25px 25px 0 rgba(0, 0, 0, 0.2), 25px 25px 25px 0 rgba(0, 0, 0, 0.19);
 	border: 2px solid #e7e7e7;
 	border-radius: 1px;
 	background: #fff;
@@ -2915,6 +3009,7 @@ ul.add_info li i {
 	border-bottom: 2px solid #f58936;
 	display: block;
 }
+
 .desc-points {
 	margin-bottom: 50px;
 }
@@ -3176,15 +3271,19 @@ ul.add_info li i {
 	margin-bottom: 0;
 	background-color: #fff;
 	border: 1px solid #eeeeee;
+	box-shadow: 25px 25px 25px 0 rgba(0, 0, 0, 0.2), 25px 25px 25px 0 rgba(0, 0, 0, 0.19);
+
 }
 .sidebar .widget .widget-heading {
-	background-color: #fff;
+	background-color: #1d282c;
 	border-color: #eeeeee;
 	border-bottom-color: #eeeeee;
 	border-bottom: 1px solid #eeeeee;
+	letter-spacing: 1px;
 	border-radius: 0;
-	color: #232323;
+	color: #fff;
 	padding: 0;
+
 }
 .sidebar .widget .widget-content {
 	border-top-color: #eeeeee;
@@ -3402,6 +3501,7 @@ ul.add_info li i {
 	position: relative;
 	width: 100%;
 	outline: none;
+	padding-bottom:  10px;
 }
 .ad-listing-price p {
 	color: #fff;
@@ -3409,6 +3509,7 @@ ul.add_info li i {
 	padding: 5%;
 	text-align: center;
 	margin-bottom: 0;
+		box-shadow: 25px 25px 25px 0 rgba(0, 0, 0, 0.2), 25px 25px 25px 0 rgba(0, 0, 0, 0.19);
 }
 .user-photo img {
 	border-radius: 5px;
@@ -3426,6 +3527,11 @@ ul.add_info li i {
 .user-info-card {
 	padding-bottom: 15px;
 	padding-top: 25px;
+}
+
+.user-info-card img {
+  height: 120px;
+	width: 120px;
 }
 .ad-listing-meta > ul {
 	padding: 0;
@@ -3676,7 +3782,7 @@ ul.add_info li i {
 	color: #232323;
 }
 .user-contact-info {
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 }
 .blog-detial .page-numbers {
 	display: inline-block;
@@ -4047,7 +4153,7 @@ ul.category-list-data li:hover a span {
 	padding: 30px 0;
 	text-align: center;
 	width: 100%;
-	box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 25px 25px 25px 0 rgba(0, 0, 0, 0.2), 20px 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .gray .box::after {
     border-bottom: 50px solid #e6e6e6;
@@ -4065,7 +4171,7 @@ ul.category-list-data li:hover a span {
 }
 .box::after {
     border-bottom: 50px solid #f9f9f9;
-    border-right: 50px solid #fff;
+    border-right: 50px solid #1d282c;
     box-shadow: -8px 3px 9px -8px rgba(0, 0, 0, 0.1);
     content: "";
     height: 0;
@@ -4204,7 +4310,9 @@ ul.category-list-data li:hover a span {
 /* =-=-=-=-=-=-= Category Grid 5 =-=-=-=-=-=-= */
 .popular-categories {
 	display: block;
-	margin: 0;
+	margin: 40px;
+	background-color: #1d282c;
+	box-shadow: 15px 15px 15px 0 rgba(0, 0, 0, 0.2), 15px 15px 15px 0 rgba(0, 0, 0, 0.19)
 }
 .popular-categories li a {
 	background-color: #fff;
@@ -4299,6 +4407,7 @@ ul.category-list-data li:hover a span {
 	overflow: hidden;
 	position: relative;
 	width: 100%;
+		box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.2), 0 15px 15px 0 rgba(0, 0, 0, 0.19);
 }
 .small-breadcrumb.type-2 {
 	background: transparent;
@@ -4462,7 +4571,7 @@ ul.category-list-data li:hover a span {
 	width: 100%;
 	float: left;
 	display: inline-block;
-	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 15px 15px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 25px 25px 25px 0 rgba(0, 0, 0, 0.2), 25px 25px 25px 0 rgba(0, 0, 0, 0.19);
 }
 .slide-carousel .carousel-indicators {
 	margin-bottom: 0;
@@ -4481,7 +4590,6 @@ ul.category-list-data li:hover a span {
 .parallex {
 	color: #fff !important;
 	position: relative;
-	z-index: 44;
 }
 .parallex h2 {
 	color: #fff !important;
@@ -4613,7 +4721,7 @@ ul.category-list-data li:hover a span {
 	overflow: hidden;
 	position: relative;
 	   padding: 20px 5px 10px;
-	box-shadow: 0 50px 50px 0 rgba(0, 0, 0, 0.2), 0 15px 15px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 25px 25px 25px 0 rgba(0, 0, 0, 0.2), 25px 25px 25px 0 rgba(0, 0, 0, 0.19);
 }
 .grid-panel .heading-panel {
 	margin-bottom: 20px;
@@ -5299,6 +5407,9 @@ ul.category-list-data li:hover a span {
 .latest-ads .panel.with-nav-tabs .nav-justified {
 	margin-bottom: -1px;
 }
+.back{
+	background-color: #666666;
+}
 .latest-ads .panel .nav-tabs > li > a:hover {
 	border-color: #eee #eee #ddd;
 	background-color: #fff;
@@ -5699,14 +5810,16 @@ ul.category-list-data li:hover a span {
 	width: 51px;
 }
 .filter-brudcrums {
-	border-bottom: 1px solid #ddd;
-	border-top: 1px solid #ddd;
+	background-color: #1d282c ;
+	color: #fff;
 	overflow: hidden;
 	position: relative;
+	letter-spacing: 1px;
 	float: left;
 	padding: 20px 0;
 	width: 100%;
 	margin-bottom: 30px;
+	box-shadow: 25px 25px 25px 0 rgba(0, 0, 0, 0.2), 25px 25px 25px 0 rgba(0, 0, 0, 0.19);
 }
 .white-bg .filter-brudcrums {
 	border-top: medium none;
@@ -5721,7 +5834,7 @@ ul.category-list-data li:hover a span {
 	line-height: 45px;
 }
 .filter-brudcrums span {
-	color: #232323;
+	color: #fff;
 	font-size: 16px;
 	font-family: 'Merriweather', serif;
 }
@@ -6236,7 +6349,7 @@ ul.category-list-data li:hover a span {
 	text-align: center;
 	width: 80px;
 	z-index: 999;
-	box-shadow: 0 40px 40px 0 rgba(0, 0, 0, 0.2), 0 30px 30px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 25px 25px 25px 0 rgba(0, 0, 0, 0.2), 25px 25px 25px 0 rgba(0, 0, 0, 0.19);
 }
 .sticky-post-button:focus {
 	color:#fff !important;
@@ -6332,7 +6445,7 @@ ul.category-list-data li:hover a span {
 	background-size: cover;
 }
 .funfacts {
-	height: 100%;
+	height: 30px;
 	text-align: center;
 }
 .funfacts .number {
@@ -6820,7 +6933,7 @@ span.app-store-btn {
 }
 .pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span {
 	border-radius: 0px;
-	box-shadow: 0 40px 40px 0 rgba(0, 0, 0, 0.2), 0 30px 30px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 15px 15px 15px 0 rgba(0, 0, 0, 0.2), 15px 15px 15px 0 rgba(0, 0, 0, 0.19);
 
 }
 .pagination li {
@@ -6835,7 +6948,7 @@ span.app-store-btn {
 	font-size: 14px;
 	font-weight: 400;
 	padding: 10px 14px;
-	box-shadow: 0 40px 40px 0 rgba(0, 0, 0, 0.2), 0 30px 30px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 15px 15px 15px 0 rgba(0, 0, 0, 0.2), 15px 15px 15px 0 rgba(0, 0, 0, 0.19);
 }
 /* =-=-=-=-=-=-= Profile & Dashboard =-=-=-=-=-=-= */
 .user-profile, .user-profile figure, .user-profile ul, .user-profile ul li, .user-profile ul li a {
@@ -8202,9 +8315,12 @@ footer#footer .widget-newsletter .fieldset P {
 	background-color: #313131;
 	border-top: 1px solid rgba(255, 255, 255, 0.05);
 	color: #ffffff;
+	letter-spacing: 1px;
 	overflow: hidden;
 	padding-top: 76px;
 	position: relative;
+	box-shadow: 0 0 0 20 rgba(0, 0, 0, 0.2), 0 0 0 40px rgba(0, 0, 0, 0.19);
+
 }
 .minimal-footer-1 .sub-footer {
 	background-color: #363636;
@@ -8550,7 +8666,7 @@ ul.listingViewIcon li.shortByListingLi ul li a {
 /* The actual popup */
 .popup .popuptext {
   visibility: hidden;
-  width: 300px;
+  width: 400px;
 	height: auto;
 	box-shadow: 0 40px 40px 0 rgba(0, 0, 0, 0.2), 0 30px 30px 0 rgba(0, 0, 0, 0.19);
   background-color: #555;
@@ -8565,9 +8681,14 @@ ul.listingViewIcon li.shortByListingLi ul li a {
   margin-left: -80px;
 }
 .popup .popuptext img{
-	width: 100%;
+	width: auto;
 	height: 200px;
-	margin-bottom: 10px
+	margin-bottom: 10px;
+}
+.popup .full_name{
+	background-color: #1d282c;
+	margin-bottom: 10px;
+	margin-top: 0px;
 }
 /* Popup arrow */
 .popup .popuptext::after {

@@ -70,9 +70,7 @@ def user_profile(request, username):
     else:
         form = EditProfile(request.POST,request.FILES,instance=user.profile)
         if form.is_valid():
-                newform = form.save(commit=False)
-                newform.owner = request.user
-                newform.save()
+                form.save()
                 context = {
                     'count':publish.count(),
                     'form':form,

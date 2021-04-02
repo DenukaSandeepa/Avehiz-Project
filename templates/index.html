@@ -15,7 +15,7 @@
     <section class="main-search parallex ">
 
       <div class="container">
-         <div class="search-container">
+         <div class="search-container ">
             <!-- Form -->
             <h2>Welcome To Avehiz... What are you looking for ?</h2>
             <form action="{% url 'search' %}">
@@ -77,153 +77,158 @@
 
       <!-- =-=-=-=-=-=-= Home Banner 2 End =-=-=-=-=-=-= -->
       <!-- =-=-=-=-=-=-= Main Content Area =-=-=-=-=-=-= -->
-      <div class="main-content-area clearfix">
-
-         <!-- =-=-=-=-=-=-= Popular Categories =-=-=-=-=-=-= -->
-         <section class="custom-padding gray popular-categories">
-           <form class="" action="{% url 'type' %}" method="GET">
-            <!-- Main Container -->
-            <div class="heading-panel">
-               <div class="col-xs-12 col-md-12 col-sm-12 text-center">
-                  <!-- Main Title -->
-                  <h1>Select by Category</h1>
-                  <!-- Short Description -->
+      <div class="main-content-area clearfix back">
+             <section class="custom-padding popular-categories">
+               <form class="" action="{% url 'type' %}" method="GET">
+                <!-- Main Container -->
+                <div class="heading-panel">
+                   <div class="col-xs-12 col-md-12 col-sm-12 text-center">
+                      <!-- Main Title -->
+                      <h1 class="main-title">Select by Category</h1>
+                      <!-- Short Description -->
+                  </div>
                 </div>
-            </div>
-            <div class="container">
-               <!-- Row -->
-               <div class="row">
-                  <!-- Category Grid  -->
-                  <div class="col-md-3 col-xs-12 col-sm-6">
-                     <div class="box">
-                        <img alt="img" src="{% static 'images\types\saden.jpg' %}">
-                        <button type="submit" name="sedan" value="sedan" class="type_button"><h4><a>Sedan</a></h4></button>
-                        <strong>1,265 Jobs</strong>
-                     </div>
-                  </div>
-                  <!-- Category Grid  -->
-                  <div class="col-md-3 col-xs-12 col-sm-6">
-                     <div class="box">
-                        <img alt="img" src="{% static 'images\types\SUV.jpg' %}">
-                        <button type="submit" name="suv" value="suv" class="type_button"><h4><a>SUV</a></h4></button>
-                        <strong>1,265 Ads</strong>
-                     </div>
-                  </div>
-                  <!-- Category Grid  -->
-                  <div class="col-md-3 col-xs-12 col-sm-6">
-                     <div class="box">
-                        <img alt="img" src="{% static 'images\types\coupe.jpg' %}">
-                        <button type="submit" name="coupe" value="coupe" class="type_button"><h4><a>Coupe</a></h4></button>
-                        <strong>6,213 Ads</strong>
-                     </div>
-                  </div>
-                  <!-- Category Grid  -->
-                  <div class="col-md-3 col-xs-12 col-sm-6">
-                     <div class="box">
-                        <img alt="img" src="{% static 'images\types\pickup.jpg' %}">
-                        <button type="submit" name="pickup" value="pickup" class="type_button"><h4><a>Pickup</a></h4></button>
-                        <strong>3,750 Ads</strong>
-                     </div>
-                  </div>
-                  <!-- Category Grid  -->
-                  <div class="col-md-3 col-xs-12 col-sm-6">
-                     <div class="box">
-                        <img alt="img" src="{% static 'images\types\cuvc.jpg' %}">
-                        <button type="submit" name="CUV/Crossover" value="CUV/Crossover" class="type_button"><h4><a>Crossover & CUV</a></h4></button>
-                        <strong>5,913 Ads</strong>
-                     </div>
-                  </div>
-                  <!-- Category Grid  -->
-                  <div class="col-md-3 col-xs-12 col-sm-6">
-                     <div class="box">
-                        <img alt="img" src="{% static 'images\types\convertible.jpg' %}">
-                        <button type="submit" name="Convertible" value="Convertible" class="type_button"><h4><a>Convertible</a></h4></button>
-                        <strong>9,942 Ads</strong>
-                     </div>
-                  </div>
-                  <!-- Category Grid  -->
-                  <div class="col-md-3 col-xs-12 col-sm-6">
-                     <div class="box">
-                        <img alt="img" src="{% static 'images\types\harchback.jpg' %}">
-                        <button type="submit" name="Hatchback" value="Hatchback" class="type_button"><h4><a>Hatchback</a></h4></button>
-                        <strong>3,891 Ads</strong>
-                     </div>
-                  </div>
-                  <!-- Category Grid  -->
-                  <div class="col-md-3 col-xs-12 col-sm-6">
-                     <div class="box">
-                        <img alt="img" src="{% static 'images\types\minivan.jpg' %}">
-                        <button type="submit" name="MPV/Minivan" value="MPV/Minivan" class="type_button"><h4><a>MPV & Minivan</a></h4></button>
-                        <strong>7,418 Ads</strong>
-                     </div>
-                  </div>
-                  <div class="col-md-3 col-xs-12 col-sm-6">
-                     <div class="box">
-                        <img alt="img" src="{% static 'images\types\station.jpeg' %}">
-                        <button type="submit" name="Station Wagon" value="Station Wagon" class="type_button"><h4><a>Station Wagon & Estate</a></h4></button>
-                        <strong>7,418 Ads</strong>
-                     </div>
-                  </div>
-                  <!-- Category Grid  -->
-                  <div class="col-md-3 col-xs-12 col-sm-6">
-                     <div class="box">
-                        <img alt="img" src="{% static 'images\types\van.jpg' %}">
-                        <button type="submit" name="van" value="van" class="type_button"><h4><a>Van</a></h4></button>
-                        <strong>7,418 Ads</strong>
-                     </div>
-                  </div>
-                  <!-- Category Grid  -->
-                  <div class="col-md-3 col-xs-12 col-sm-6">
-                     <div class="box">
-                        <img alt="img" src="{% static 'images\types\bus.jpeg' %}">
 
-                        <button type="submit" name="bus" value="bus" class="type_button"><h4><a>Bus</a></h4></button>
-                        <strong>7,418 Ads</strong>
-                     </div>
-                  </div>
-                  <!-- Category Grid  -->
-                  <div class="col-md-3 col-xs-12 col-sm-6">
-                     <div class="box">
-                        <img alt="img" src="{% static 'images\types\lorry.jpg' %}">
-                        <button type="submit" name="lorry" value="lorry" class="type_button"><h4><a>Lorry</a></h4></button>
-                        <strong>7,418 Ads</strong>
-                     </div>
-                  </div>
-                  <!-- Category Grid  -->
-                  <div class="col-md-3 col-xs-12 col-sm-6">
-                     <div class="box">
-                        <img alt="img" src="{% static 'images\types\bike.jpg' %}">
-                        <button type="submit" name="motorbike" value="motorbike" class="type_button"><h4><a>Motorbike</a></h4></button>
-                        <strong>7,418 Ads</strong>
-                     </div>
-                  </div>
-                  <!-- Category Grid  -->
-                  <div class="col-md-3 col-xs-12 col-sm-6">
-                     <div class="box">
-                        <img alt="img" src="{% static 'images\types\scooter.jpeg' %}">
-                        <button type="submit" name="scooter" value="scooter" class="type_button"><h4><a>Scooter</a></h4></button>
-                        <strong>7,418 Ads</strong>
-                     </div>
-                  </div>
-                  <div class="col-md-3 col-xs-12 col-sm-6">
-                     <div class="box">
-                        <img alt="img" src="{% static 'images\types\threewheeler.jpeg' %}">
-                        <button type="submit" name="Three-Wheeler" value="Three-Wheeler" class="type_button"><h4><a>Three-Wheeler</a></h4></button>
-                        <strong>7,418 Ads</strong>
-                     </div>
-                  </div>
-               </div>
-               <!-- Row End -->
-            </div>
-            </form>
-            <!-- Main Container End -->
-         </section>
-         <!-- =-=-=-=-=-=-= Popular Categories End =-=-=-=-=-=-= -->
+                <div class="container">
+                   <!-- Row -->
 
-         <!-- =-=-=-=-=-=-= Trending Ads =-=-=-=-=-=-= -->
+                   <div class="row">
+                      <!-- Category Grid  -->
+                      <div class="col-md-3 col-xs-12 col-sm-6">
+                         <div class="box">
+                            <img alt="img" src="{% static 'images\types\saden.jpg' %}">
+                            <button type="submit" name="sedan" value="sedan" class="type_button"><h4><a>Sedan</a></h4></button>
+                            <strong>1,265 Jobs</strong>
+                         </div>
+                      </div>
+                      <!-- Category Grid  -->
+                      <div class="col-md-3 col-xs-12 col-sm-6">
+                         <div class="box">
+                            <img alt="img" src="{% static 'images\types\SUV.jpg' %}">
+                            <button type="submit" name="suv" value="suv" class="type_button"><h4><a>SUV</a></h4></button>
+                            <strong>1,265 Ads</strong>
+                         </div>
+                      </div>
+                      <!-- Category Grid  -->
+                      <div class="col-md-3 col-xs-12 col-sm-6">
+                         <div class="box">
+                            <img alt="img" src="{% static 'images\types\coupe.jpg' %}">
+                            <button type="submit" name="coupe" value="coupe" class="type_button"><h4><a>Coupe</a></h4></button>
+                            <strong>6,213 Ads</strong>
+                         </div>
+                      </div>
+                      <!-- Category Grid  -->
+                      <div class="col-md-3 col-xs-12 col-sm-6">
+                         <div class="box">
+                            <img alt="img" src="{% static 'images\types\pickup.jpg' %}">
+                            <button type="submit" name="pickup" value="pickup" class="type_button"><h4><a>Pickup</a></h4></button>
+                            <strong>3,750 Ads</strong>
+                         </div>
+                      </div>
+                      <!-- Category Grid  -->
+                      <div class="col-md-3 col-xs-12 col-sm-6">
+                         <div class="box">
+                            <img alt="img" src="{% static 'images\types\cuvc.jpg' %}">
+                            <button type="submit" name="CUV/Crossover" value="CUV/Crossover" class="type_button"><h4><a>Crossover & CUV</a></h4></button>
+                            <strong>5,913 Ads</strong>
+                         </div>
+                      </div>
+                      <!-- Category Grid  -->
+                      <div class="col-md-3 col-xs-12 col-sm-6">
+                         <div class="box">
+                            <img alt="img" src="{% static 'images\types\convertible.jpg' %}">
+                            <button type="submit" name="Convertible" value="Convertible" class="type_button"><h4><a>Convertible</a></h4></button>
+                            <strong>9,942 Ads</strong>
+                         </div>
+                      </div>
+                      <!-- Category Grid  -->
+                      <div class="col-md-3 col-xs-12 col-sm-6">
+                         <div class="box">
+                            <img alt="img" src="{% static 'images\types\harchback.jpg' %}">
+                            <button type="submit" name="Hatchback" value="Hatchback" class="type_button"><h4><a>Hatchback</a></h4></button>
+                            <strong>3,891 Ads</strong>
+                         </div>
+                      </div>
+                      <!-- Category Grid  -->
+                      <div class="col-md-3 col-xs-12 col-sm-6">
+                         <div class="box">
+                            <img alt="img" src="{% static 'images\types\minivan.jpg' %}">
+                            <button type="submit" name="MPV/Minivan" value="MPV/Minivan" class="type_button"><h4><a>MPV & Minivan</a></h4></button>
+                            <strong>7,418 Ads</strong>
+                         </div>
+                      </div>
+                      <div class="col-md-3 col-xs-12 col-sm-6">
+                         <div class="box">
+                            <img alt="img" src="{% static 'images\types\station.jpeg' %}">
+                            <button type="submit" name="Station Wagon" value="Station Wagon" class="type_button"><h4><a>Station Wagon & Estate</a></h4></button>
+                            <strong>7,418 Ads</strong>
+                         </div>
+                      </div>
+                      <!-- Category Grid  -->
+                      <div class="col-md-3 col-xs-12 col-sm-6">
+                         <div class="box">
+                            <img alt="img" src="{% static 'images\types\van.jpg' %}">
+                            <button type="submit" name="van" value="van" class="type_button"><h4><a>Van</a></h4></button>
+                            <strong>7,418 Ads</strong>
+                         </div>
+                      </div>
+                      <!-- Category Grid  -->
+                      <div class="col-md-3 col-xs-12 col-sm-6">
+                         <div class="box">
+                            <img alt="img" src="{% static 'images\types\bus.jpeg' %}">
+
+                            <button type="submit" name="bus" value="bus" class="type_button"><h4><a>Bus</a></h4></button>
+                            <strong>7,418 Ads</strong>
+                         </div>
+                      </div>
+                      <!-- Category Grid  -->
+                      <div class="col-md-3 col-xs-12 col-sm-6">
+                         <div class="box">
+                            <img alt="img" src="{% static 'images\types\lorry.jpg' %}">
+                            <button type="submit" name="lorry" value="lorry" class="type_button"><h4><a>Lorry</a></h4></button>
+                            <strong>7,418 Ads</strong>
+                         </div>
+                      </div>
+                      <!-- Category Grid  -->
+                      <div class="col-md-3 col-xs-12 col-sm-6">
+                         <div class="box">
+                            <img alt="img" src="{% static 'images\types\bike.jpg' %}">
+                            <button type="submit" name="motorbike" value="motorbike" class="type_button"><h4><a>Motorbike</a></h4></button>
+                            <strong>7,418 Ads</strong>
+                         </div>
+                      </div>
+                      <!-- Category Grid  -->
+                      <div class="col-md-3 col-xs-12 col-sm-6">
+                         <div class="box">
+                            <img alt="img" src="{% static 'images\types\scooter.jpeg' %}">
+                            <button type="submit" name="scooter" value="scooter" class="type_button"><h4><a>Scooter</a></h4></button>
+                            <strong>7,418 Ads</strong>
+                         </div>
+                      </div>
+                      <div class="col-md-3 col-xs-12 col-sm-6">
+                         <div class="box">
+                            <img alt="img" src="{% static 'images\types\threewheeler.jpeg' %}">
+                            <button type="submit" name="Three-Wheeler" value="Three-Wheeler" class="type_button"><h4><a>Three-Wheeler</a></h4></button>
+                            <strong>7,418 Ads</strong>
+                         </div>
+                      </div>
+                   </div>
+                   <!-- Row End -->
+                   </div>
+                </form>
+                <!-- Main Container End -->
+             </section>
+
          <section class="custom-padding gray">
             <!-- Main Container -->
             <div class="container">
+              <div class="heading-panel-recentads">
+                 <div class="col-xs-12 col-md-12 col-sm-12 text-center">
+                    <!-- Main Title -->
+                    <h1>Recent Ads</h1>
+                    <!-- Short Description -->
+                </div>
+              </div>
                <!-- Row -->
                <div class="row">
                   <!-- Heading Area -->
