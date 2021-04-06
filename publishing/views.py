@@ -113,3 +113,7 @@ def search(request):
        'searched': request.GET
   }
   return render(request, 'publishing/search.html', context)
+
+def test(request):
+     form = CreateAdForm(request.POST,request.FILES or None)
+     return render(request,'publishing/test.html',{'form':CreateAdForm()})

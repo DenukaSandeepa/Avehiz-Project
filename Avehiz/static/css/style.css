@@ -5785,11 +5785,7 @@ ul.category-list-data li:hover a span {
 .submit-form .select-package p {
 	font-size: 14px;
 }
-.postdetails .form-group {
-	margin-bottom: 40px;
-	position: relative;
-	overflow: hidden;
-}
+
 .selected-product {
 	border-bottom: 1px solid #f2f2f2;
 	padding: 10px 0 20px;
