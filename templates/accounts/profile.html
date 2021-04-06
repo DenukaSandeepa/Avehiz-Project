@@ -3,9 +3,9 @@
 {% block content %}
 {% load static %}
 <header>
-  <title>Avehiz-All Listings</title>
+  <title>Avehiz-{{ user.username }}</title>
   <section class="main-search parallex ">
-       <center><h1 class="align-center">All Listings</h1></center>
+       <h1>{{ user.username }}</h1>
   </section>
   <div class="main-content-area clearfix">
         <div class="small-breadcrumb">

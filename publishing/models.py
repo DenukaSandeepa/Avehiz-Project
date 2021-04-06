@@ -1,7 +1,7 @@
 from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import User
-
+from osm_field.fields import LatitudeField, LongitudeField, OSMField
 
 class publishing(models.Model):
       type_choices = (
@@ -76,6 +76,10 @@ class publishing(models.Model):
       address = models.TextField(max_length=100)
       vote_total = models.IntegerField(default=1)
       owner = models.ForeignKey(User,on_delete=models.CASCADE)
+      location = OSMField()
+      location_lat = LatitudeField()
+      location_lon = LongitudeField()
+
 
       def __str__(self):
           return self.title

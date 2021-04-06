@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'osm_field',
 
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -81,7 +82,7 @@ WSGI_APPLICATION = 'Avehiz.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'avehizdb',
+        'NAME': 'AvehizNew',
         'USER': 'postgres',
         'PASSWORD': 'Sajini1999',
         'HOST': 'localhost',

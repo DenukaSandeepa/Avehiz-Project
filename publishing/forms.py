@@ -27,6 +27,9 @@ class CreateAdForm(forms.ModelForm):
         'tel',
         'city',
         'address',
+        'location',
+        'location_lat',
+        'location_lon',
         )
 
         widgets = {

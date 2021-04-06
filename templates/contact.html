@@ -3,7 +3,7 @@
 {% load static %}
 <header>
   <section class="main-search parallex ">
-
+   <h1>Contact Us</h1>
   </section>
   <div class="main-content-area clearfix">
         <div class="small-breadcrumb">
@@ -26,17 +26,17 @@
          <!-- Row -->
          <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 no-padding commentForm">
-               <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                  <div class="">
+               <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
+                  <div>
                     {% if name  %}
-                      <h2>Thank You For Contacting Us {{name}}</h2>
+                      <h2 class="text-center">Thank You For Contacting Us {{name}}</h2>
                     {% else %}
-                     <h2>Send Us a Message - </h2>
+                     <h2 class="text-center">Send Us a Message </h2>
                     {% endif %}
                      <form method="post" action="{% url 'contact' %}">
                        {% csrf_token %}
                         <div class="row">
-                           <div class="col-lg-6 col-md-6 col-xs-12">
+                         <div class="col-lg-6 col-md-6 col-xs-12">
                               <div class="form-group">
                                  <input type="text" placeholder="Name" id="name" name="name" class="form-control" required="">
                               </div>
@@ -59,9 +59,9 @@
                      </form>
                   </div>
                </div>
-               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                  <div class="contactInfo">
-                     <h2>Contact Info</h2>
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                  <div class="contactInfo ">
+                     <h2 class="text-center">Contact Info</h2>
                      <div class="singleContadds">
                         <i class="fa fa-map-marker"></i>
                         <p>
@@ -90,7 +90,7 @@
       </div>
       <!-- Main Container End -->
   </section>
-   <img src="{% static 'images\footer-bg1.jpg' %}">
+   <img src="{% static 'images\footer-bg1.jpg' %}" class="footer_image">
 
 
 {% endblock %}
